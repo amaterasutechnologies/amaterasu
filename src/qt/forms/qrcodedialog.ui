@@ -140,7 +140,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="ojacoinAmountField" name="lnReqAmount">
+         <widget class="amaterasuAmountField" name="lnReqAmount">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -185,9 +185,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ojacoinAmountField</class>
+   <class>amaterasuAmountField</class>
    <extends>QSpinBox</extends>
-   <header>ojacoinamountfield.h</header>
+   <header>amaterasuamountfield.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

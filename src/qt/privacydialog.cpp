@@ -324,7 +324,7 @@ void PrivacyDialog::sendzECA()
     }
     else{
         if (!address.IsValid()) {
-            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid ojacoin Address"), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid amaterasu Address"), QMessageBox::Ok, QMessageBox::Ok);
             ui->payTo->setFocus();
             return;
         }
@@ -357,7 +357,7 @@ void PrivacyDialog::sendzECA()
 
     if(!fWholeNumber && fMintChange){
         QString strFeeWarning = "You've entered an amount with fractional digits and want the change to be converted to Zerocoin.<br /><br /><b>";
-        strFeeWarning += QString::number(dzFee, 'f', 8) + " ojacoin </b>will be added to the standard transaction fees!<br />";
+        strFeeWarning += QString::number(dzFee, 'f', 8) + " amaterasu </b>will be added to the standard transaction fees!<br />";
         QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm additional Fees"),
             strFeeWarning,
             QMessageBox::Yes | QMessageBox::Cancel,
@@ -505,7 +505,7 @@ void PrivacyDialog::sendzECA()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " ojacoin, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " amaterasu, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");
@@ -804,7 +804,7 @@ void PrivacyDialog::updateSPORK16Status()
     } else if (!fMaintenanceMode && !fButtonsEnabled) {
         // Mint zECA
         ui->pushButtonMintzECA->setEnabled(true);
-        ui->pushButtonMintzECA->setToolTip(tr("PrivacyDialog", "Enter an amount of ojacoin to convert to zECA", 0));
+        ui->pushButtonMintzECA->setToolTip(tr("PrivacyDialog", "Enter an amount of amaterasu to convert to zECA", 0));
 
         // Spend zECA
         ui->pushButtonSpendzECA->setEnabled(true);

@@ -1,10 +1,10 @@
 // Copyright (c) 2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_ZECACHAIN_H
-#define ojacoin_ZECACHAIN_H
+#ifndef amaterasu_ZECACHAIN_H
+#define amaterasu_ZECACHAIN_H
 
 #include "libzerocoin/Coin.h"
 #include "libzerocoin/Denominations.h"
@@ -40,4 +40,4 @@ bool TxOutToPublicCoin(const CTxOut& txout, libzerocoin::PublicCoin& pubCoin, CV
 std::list<libzerocoin::CoinDenomination> ZerocoinSpendListFromBlock(const CBlock& block, bool fFilterInvalid);
 
 
-#endif //ojacoin_ZECACHAIN_H
+#endif //amaterasu_ZECACHAIN_H

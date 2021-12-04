@@ -10,7 +10,7 @@ import operator
 import os
 import sys
 
-OUT_CPP="qt/ojacoinstrings.cpp"
+OUT_CPP="qt/amaterasustrings.cpp"
 EMPTY=['""']
 
 def parse_po(text):
@@ -74,10 +74,10 @@ f.write("""
 #define UNUSED
 #endif
 """)
-f.write('static const char UNUSED *ojacoin_strings[] = {\n')
+f.write('static const char UNUSED *amaterasu_strings[] = {\n')
 messages.sort(key=operator.itemgetter(0))
 for (msgid, msgstr) in messages:
     if msgid != EMPTY:
-        f.write('QT_TRANSLATE_NOOP("ojacoin-core", %s),\n' % ('\n'.join(msgid)))
+        f.write('QT_TRANSLATE_NOOP("amaterasu-core", %s),\n' % ('\n'.join(msgid)))
 f.write('};\n')
 f.close()

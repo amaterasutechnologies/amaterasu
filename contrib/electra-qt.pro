@@ -78,7 +78,7 @@ HEADERS += src/activemasternode.h \
            src/crypter.h \
            src/obfuscation-relay.h \
            src/obfuscation.h \
-           src/ojacoin-config.h \
+           src/amaterasu-config.h \
            src/db.h \
            src/eccryptoverify.h \
            src/ecwrapper.h \
@@ -131,7 +131,7 @@ HEADERS += src/activemasternode.h \
            src/wallet_ismine.h \
            src/walletdb.h \
            src/compat/sanity.h \
-           src/config/ojacoin-config.h \
+           src/config/amaterasu-config.h \
            src/crypto/common.h \
            src/crypto/hmac_sha256.h \
            src/crypto/hmac_sha512.h \
@@ -332,7 +332,7 @@ HEADERS += src/activemasternode.h \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.h \
            src/crypto/aes_helper.c \
            src/qt/bitcoinamountfield.moc \
-           src/qt/ojacoin.moc \
+           src/qt/amaterasu.moc \
            src/qt/intro.moc \
            src/qt/overviewpage.moc \
            src/qt/rpcconsole.moc \
@@ -373,9 +373,9 @@ SOURCES += src/activemasternode.cpp \
            src/crypter.cpp \
            src/obfuscation-relay.cpp \
            src/obfuscation.cpp \
-           src/ojacoin-cli.cpp \
-           src/ojacoin-tx.cpp \
-           src/ojacoin.cpp \
+           src/amaterasu-cli.cpp \
+           src/amaterasu-tx.cpp \
+           src/amaterasu.cpp \
            src/db.cpp \
            src/eccryptoverify.cpp \
            src/ecwrapper.cpp \
@@ -470,8 +470,8 @@ SOURCES += src/activemasternode.cpp \
            src/qt/coincontroltreewidget.cpp \
            src/qt/csvmodelwriter.cpp \
            src/qt/obfuscationconfig.cpp \
-           src/qt/ojacoin.cpp \
-           src/qt/ojacoinstrings.cpp \
+           src/qt/amaterasu.cpp \
+           src/qt/amaterasustrings.cpp \
            src/qt/editaddressdialog.cpp \
            src/qt/guiutil.cpp \
            src/qt/intro.cpp \
@@ -549,7 +549,7 @@ SOURCES += src/activemasternode.cpp \
            src/test/sighash_tests.cpp \
            src/test/sigopcount_tests.cpp \
            src/test/skiplist_tests.cpp \
-           src/test/test_ojacoin.cpp \
+           src/test/test_amaterasu.cpp \
            src/test/timedata_tests.cpp \
            src/test/transaction_tests.cpp \
            src/test/uint256_tests.cpp \
@@ -640,21 +640,21 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv.cc \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
-RESOURCES += src/qt/ojacoin.qrc src/qt/ojacoin_locale.qrc
+RESOURCES += src/qt/amaterasu.qrc src/qt/amaterasu_locale.qrc
 
-TRANSLATIONS += src/qt/locale/ojacoin_bg.ts \
-                src/qt/locale/ojacoin_de.ts \
-                src/qt/locale/ojacoin_en.ts \
-                src/qt/locale/ojacoin_es.ts \
-                src/qt/locale/ojacoin_fi.ts \
-                src/qt/locale/ojacoin_fr.ts \
-                src/qt/locale/ojacoin_it.ts \
-                src/qt/locale/ojacoin_ja.ts \
-                src/qt/locale/ojacoin_pl.ts \
-                src/qt/locale/ojacoin_pt.ts \
-                src/qt/locale/ojacoin_ru.ts \
-                src/qt/locale/ojacoin_sk.ts \
-                src/qt/locale/ojacoin_sv.ts \
-                src/qt/locale/ojacoin_vi.ts \
-                src/qt/locale/ojacoin_zh_CN.ts \
-                src/qt/locale/ojacoin_zh_TW.ts
+TRANSLATIONS += src/qt/locale/amaterasu_bg.ts \
+                src/qt/locale/amaterasu_de.ts \
+                src/qt/locale/amaterasu_en.ts \
+                src/qt/locale/amaterasu_es.ts \
+                src/qt/locale/amaterasu_fi.ts \
+                src/qt/locale/amaterasu_fr.ts \
+                src/qt/locale/amaterasu_it.ts \
+                src/qt/locale/amaterasu_ja.ts \
+                src/qt/locale/amaterasu_pl.ts \
+                src/qt/locale/amaterasu_pt.ts \
+                src/qt/locale/amaterasu_ru.ts \
+                src/qt/locale/amaterasu_sk.ts \
+                src/qt/locale/amaterasu_sv.ts \
+                src/qt/locale/amaterasu_vi.ts \
+                src/qt/locale/amaterasu_zh_CN.ts \
+                src/qt/locale/amaterasu_zh_TW.ts

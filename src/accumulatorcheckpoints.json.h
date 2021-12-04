@@ -1,11 +1,11 @@
 // Copyright (c) 2018 The PIVX developers
 // Copyright (c) 2018 The Electra developers
-//ojacoin adding
+//amaterasu adding
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_ACCUMULATORCHECKPOINTS_JSON_H
-#define ojacoin_ACCUMULATORCHECKPOINTS_JSON_H
+#ifndef amaterasu_ACCUMULATORCHECKPOINTS_JSON_H
+#define amaterasu_ACCUMULATORCHECKPOINTS_JSON_H
 
 #include <string>
 std::string GetMainCheckpoints() { // Initially set height to zerocoin start height
@@ -59,4 +59,4 @@ std::string GetRegTestCheckpoints() {
     return strRegTestCheckpoints;
 }
 
-#endif //ojacoin_ACCUMULATORCHECKPOINTS_JSON_H
+#endif //amaterasu_ACCUMULATORCHECKPOINTS_JSON_H

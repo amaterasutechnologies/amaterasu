@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_ACCUMULATORS_H
-#define ojacoin_ACCUMULATORS_H
+#ifndef amaterasu_ACCUMULATORS_H
+#define amaterasu_ACCUMULATORS_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -31,4 +31,4 @@ int GetChecksumHeight(uint32_t nChecksum, libzerocoin::CoinDenomination denomina
 bool InvalidCheckpointRange(int nHeight);
 bool ValidateAccumulatorCheckpoint(const CBlock& block, CBlockIndex* pindex, AccumulatorMap& mapAccumulators);
 
-#endif //ojacoin_ACCUMULATORS_H
+#endif //amaterasu_ACCUMULATORS_H

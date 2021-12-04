@@ -19,7 +19,7 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits() //disable the unit choice to avoid confusion
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(ojacoin);
+    unitlist.append(amaterasu);
     //unitlist.append(mECA); 
     //unitlist.append(uECA);
     return unitlist;
@@ -28,7 +28,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits() //disable the unit choi
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case ojacoin:
+    case amaterasu:
     case mECA:
     case uECA:
         return true;
@@ -40,12 +40,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case ojacoin:
-        return QString("OJA");
+    case amaterasu:
+        return QString("TERASU");
     case mECA:
-        return QString("mOJA");
+        return QString("mTERASU");
     case uECA:
-        return QString::fromUtf8("uOJA");
+        return QString::fromUtf8("uTERASU");
     default:
         return QString("???");
     }
@@ -55,23 +55,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case ojacoin:
-            return QString("OJA");
+        case amaterasu:
+            return QString("TERASU");
         case mECA:
-            return QString("mOJA");
+            return QString("mTERASU");
         case uECA:
-            return QString::fromUtf8("μOJA");
+            return QString::fromUtf8("μTERASU");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case ojacoin:
-            return QString("tOJA");
+        case amaterasu:
+            return QString("tTERASU");
         case mECA:
-            return QString("mtOJA");
+            return QString("mtTERASU");
         case uECA:
-            return QString::fromUtf8("μtOJA");
+            return QString::fromUtf8("μtTERASU");
         default:
             return QString("???");
         }
@@ -82,23 +82,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case ojacoin:
-            return QString("OJA");
+        case amaterasu:
+            return QString("TERASU");
         case mECA:
-            return QString("Milli-OJA (1 / 1" THIN_SP_UTF8 "000)");
+            return QString("Milli-TERASU (1 / 1" THIN_SP_UTF8 "000)");
         case uECA:
-            return QString("Micro-OJA (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("Micro-TERASU (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case ojacoin:
-            return QString("TestOJA");
+        case amaterasu:
+            return QString("TestTERASU");
         case mECA:
-            return QString("Milli-TestOJA (1 / 1" THIN_SP_UTF8 "000)");
+            return QString("Milli-TestTERASU (1 / 1" THIN_SP_UTF8 "000)");
         case uECA:
-            return QString("Micro-TestOJA (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("Micro-TestTERASU (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -108,7 +108,7 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case ojacoin:
+    case amaterasu:
         return 100000000;
     case mECA:
         return 100000;
@@ -122,7 +122,7 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case ojacoin:
+    case amaterasu:
         return 8;
     case mECA:
         return 5;

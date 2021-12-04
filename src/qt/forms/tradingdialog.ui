@@ -442,10 +442,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>Buy ojacoin</string>
+      <string>Buy amaterasu</string>
      </property>
      <property name="icon">
-      <iconset resource="../ojacoin.qrc">
+      <iconset resource="../amaterasu.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -512,7 +512,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>ojacoin</string>
+      <string>amaterasu</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -1704,7 +1704,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>ojacoin</string>
+      <string>amaterasu</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="UnitsInputECA">
@@ -1751,10 +1751,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>Sell ojacoin</string>
+      <string>Sell amaterasu</string>
      </property>
      <property name="icon">
-      <iconset resource="../ojacoin">
+      <iconset resource="../amaterasu">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -1777,7 +1777,7 @@
          </font>
         </property>
         <property name="text">
-         <string>ojacoin Available:</string>
+         <string>amaterasu Available:</string>
         </property>
        </widget>
       </item>
@@ -2221,7 +2221,7 @@
          </font>
         </property>
         <property name="text">
-         <string>ojacoin</string>
+         <string>amaterasu</string>
         </property>
        </widget>
       </item>
@@ -2762,7 +2762,7 @@
       </font>
      </property>
      <property name="text">
-      <string>ojacoin Balance:</string>
+      <string>amaterasu Balance:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_12">
@@ -2813,7 +2813,7 @@
       </font>
      </property>
      <property name="text">
-      <string>ojacoin Available:</string>
+      <string>amaterasu Available:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_14">
@@ -2832,7 +2832,7 @@
       </font>
      </property>
      <property name="text">
-      <string>ojacoin Pending:</string>
+      <string>amaterasu Pending:</string>
      </property>
     </widget>
     <widget class="QLabel" name="ECAPendingLabel">
@@ -2928,7 +2928,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Bittrex ojacoin Deposit Address:</string>
+      <string>Bittrex amaterasu Deposit Address:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="GenDepositBTN">
@@ -2941,10 +2941,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>Generate ojacoin Deposit Address</string>
+      <string>Generate amaterasu Deposit Address</string>
      </property>
      <property name="icon">
-      <iconset resource="../ojacoin.qrc">
+      <iconset resource="../amaterasu.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -3155,7 +3155,7 @@
        <string notr="true">border: 1px solid #61696c;margin-left:4px;</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="btnConvertojacoin">
+     <widget class="QPushButton" name="btnConvertamaterasu">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -3206,7 +3206,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../ojacoin.qrc">:/icons/transaction_1</pixmap>
+       <pixmap resource="../amaterasu.qrc">:/icons/transaction_1</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -3253,7 +3253,7 @@
       <string>Update API Keys</string>
      </property>
      <property name="icon">
-      <iconset resource="../ojacoin.qrc">
+      <iconset resource="../amaterasu.qrc">
        <normaloff>:/icons/bitcoin</normaloff>:/icons/bitcoin</iconset>
      </property>
     </widget>
@@ -3408,7 +3408,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../ojacoin.qrc"/>
+  <include location="../amaterasu.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -132,7 +132,7 @@ public slots:
     /** Show progress dialog e.g. for rescan */
     void showProgress(const QString& title, int nProgress);
 
-    /** Update selected ojacoin amount from transactionview */
+    /** Update selected amaterasu amount from transactionview */
     void trxAmount(QString amount);
 
 signals:

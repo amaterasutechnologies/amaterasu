@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2017-2019 The ojacoin developers
+// Copyright (c) 2017-2019 The amaterasu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -36,7 +36,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::ojacoin)
+    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::amaterasu)
     {
     }
 
@@ -232,12 +232,12 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         nWatchOnlyLockedBalance = pwalletMain->GetLockedWatchOnlyBalance();
     }
 
-    // ojacoin Balance
+    // amaterasu Balance
     CAmount nTotalBalance = balance + unconfirmedBalance;
     CAmount ecaAvailableBalance = balance - immatureBalance - nLockedBalance;
     CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
 
-    // ojacoin Watch-Only Balance
+    // amaterasu Watch-Only Balance
     CAmount nTotalWatchBalance = watchOnlyBalance + watchUnconfBalance;
     CAmount nAvailableWatchBalance = watchOnlyBalance - watchImmatureBalance - nWatchOnlyLockedBalance;
 
@@ -252,7 +252,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     CAmount availableTotalBalance = ecaAvailableBalance + matureZerocoinBalance;
     CAmount sumTotalBalance = nTotalBalance + zerocoinBalance;
 
-    // ojacoin labels
+    // amaterasu labels
     ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, ecaAvailableBalance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
@@ -286,10 +286,10 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
     if (fEnableZeromint) {
         automintHelp += tr("AutoMint is currently enabled and set to ") + QString::number(nZeromintPercentage) + "%.\n";
-        automintHelp += tr("To disable AutoMint add 'enablezeromint=0' in ojacoin.conf.");
+        automintHelp += tr("To disable AutoMint add 'enablezeromint=0' in amaterasu.conf.");
     }
     else {
-        automintHelp += tr("AutoMint is currently disabled.\nTo enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in ojacoin.conf");
+        automintHelp += tr("AutoMint is currently disabled.\nTo enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in amaterasu.conf");
     }
 
     // Only show most balances if they are non-zero for the sake of simplicity
@@ -302,28 +302,28 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     bool showWatchOnly = nTotalWatchBalance != 0;
 
-    // ojacoin Available
+    // amaterasu Available
     bool showECAAvailable = settingShowAllBalances || ecaAvailableBalance != nTotalBalance;
     bool showWatchOnlyECAAvailable = showECAAvailable || nAvailableWatchBalance != nTotalWatchBalance;
     ui->labelBalanceText->setVisible(showECAAvailable || showWatchOnlyECAAvailable);
     ui->labelBalance->setVisible(showECAAvailable || showWatchOnlyECAAvailable);
     ui->labelWatchAvailable->setVisible(showWatchOnlyECAAvailable && showWatchOnly);
 
-    // ojacoin Pending
+    // amaterasu Pending
     bool showECAPending = settingShowAllBalances || unconfirmedBalance != 0;
     bool showWatchOnlyECAPending = showECAPending || watchUnconfBalance != 0;
     ui->labelPendingText->setVisible(showECAPending || showWatchOnlyECAPending);
     ui->labelUnconfirmed->setVisible(showECAPending || showWatchOnlyECAPending);
     ui->labelWatchPending->setVisible(showWatchOnlyECAPending && showWatchOnly);
 
-    // ojacoin Immature
+    // amaterasu Immature
     bool showECAImmature = settingShowAllBalances || immatureBalance != 0;
     bool showWatchOnlyImmature = showECAImmature || watchImmatureBalance != 0;
     ui->labelImmatureText->setVisible(showECAImmature || showWatchOnlyImmature);
     ui->labelImmature->setVisible(showECAImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
     ui->labelWatchImmature->setVisible(showWatchOnlyImmature && showWatchOnly); // show watch-only immature balance
 
-    // ojacoin Locked
+    // amaterasu Locked
     bool showECALocked = settingShowAllBalances || nLockedBalance != 0;
     bool showWatchOnlyECALocked = showECALocked || nWatchOnlyLockedBalance != 0;
     //ui->labelLockedBalanceText->setVisible(showECALocked || showWatchOnlyECALocked);
@@ -416,7 +416,7 @@ void OverviewPage::setWalletModel(WalletModel* model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    // update the display unit, to not use the default ("ojacoin")
+    // update the display unit, to not use the default ("amaterasu")
     updateDisplayUnit();
 
     // Hide orphans

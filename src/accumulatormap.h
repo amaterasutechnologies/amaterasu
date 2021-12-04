@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_ACCUMULATORMAP_H
-#define ojacoin_ACCUMULATORMAP_H
+#ifndef amaterasu_ACCUMULATORMAP_H
+#define amaterasu_ACCUMULATORMAP_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -26,4 +26,4 @@ public:
     void Reset();
     void Reset(libzerocoin::ZerocoinParams* params2);
 };
-#endif //ojacoin_ACCUMULATORMAP_H
+#endif //amaterasu_ACCUMULATORMAP_H

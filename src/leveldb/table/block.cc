@@ -181,11 +181,11 @@ class Block::Iter : public Iterator {
       Slice mid_key(key_ptr, non_shared);
       if (Compare(mid_key, target) < 0) {
         // Key at "mid" is smaller than "target".  Therefore all
-        // blocks before "mid" are uojacoineresting.
+        // blocks before "mid" are uamaterasueresting.
         left = mid;
       } else {
         // Key at "mid" is >= "target".  Therefore all blocks at or
-        // after "mid" are uojacoineresting.
+        // after "mid" are uamaterasueresting.
         right = mid - 1;
       }
     }

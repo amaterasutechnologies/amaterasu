@@ -53,7 +53,7 @@ ds['.']['icvp'] = icvp
 ds['.']['vSrn'] = ('long', 1)
 
 ds['Applications']['Iloc'] = (370, 156)
-ds['ojacoin-Qt.app']['Iloc'] = (128, 156)
+ds['amaterasu-Qt.app']['Iloc'] = (128, 156)
 
 ds.flush()
 ds.close()

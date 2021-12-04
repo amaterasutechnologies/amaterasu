@@ -1,6 +1,6 @@
 [Protocol]
-exec=ojacoin-qt '%u'
-protocol=ojacoin
+exec=amaterasu-qt '%u'
+protocol=amaterasu
 input=none
 output=none
 helper=true

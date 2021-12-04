@@ -1,10 +1,10 @@
 // Copyright (c) 2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_ACCUMULATORCHECKPOINTS_H
-#define ojacoin_ACCUMULATORCHECKPOINTS_H
+#ifndef amaterasu_ACCUMULATORCHECKPOINTS_H
+#define amaterasu_ACCUMULATORCHECKPOINTS_H
 
 #include <libzerocoin/bignum.h>
 #include <univalue/include/univalue.h>
@@ -19,4 +19,4 @@ namespace AccumulatorCheckpoints
     Checkpoint GetClosestCheckpoint(const int& nHeight, int& nHeightCheckpoint);
 }
 
-#endif //ojacoin_ACCUMULATORCHECKPOINTS_H
+#endif //amaterasu_ACCUMULATORCHECKPOINTS_H

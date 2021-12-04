@@ -1,10 +1,10 @@
 // Copyright (c) 2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_ZECATRACKER_H
-#define ojacoin_ZECATRACKER_H
+#ifndef amaterasu_ZECATRACKER_H
+#define amaterasu_ZECATRACKER_H
 
 #include "primitives/zerocoin.h"
 #include <list>
@@ -49,4 +49,4 @@ public:
     void Clear();
 };
 
-#endif //ojacoin_ZECATRACKER_H
+#endif //amaterasu_ZECATRACKER_H

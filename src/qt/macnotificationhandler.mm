@@ -14,7 +14,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.ojacoin.ojacoin-Qt";
+        return @"io.amaterasu.amaterasu-Qt";
     } else {
         return [self __bundleIdentifier];
     }

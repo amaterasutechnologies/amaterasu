@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_STAKEINPUT_H
-#define ojacoin_STAKEINPUT_H
+#ifndef amaterasu_STAKEINPUT_H
+#define amaterasu_STAKEINPUT_H
 
 class CKeyStore;
 class CWallet;
@@ -88,4 +88,4 @@ public:
 };
 
 
-#endif //ojacoin_STAKEINPUT_H
+#endif //amaterasu_STAKEINPUT_H

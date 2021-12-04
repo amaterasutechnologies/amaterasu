@@ -1,5 +1,5 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -165,7 +165,7 @@ bool CZEcaStake::MarkSpent(CWallet *pwallet, const uint256& txid)
     return true;
 }
 
-//!ojacoin Stake
+//!amaterasu Stake
 bool CEcaStake::SetInput(CTransaction txPrev, unsigned int n)
 {
     this->txFrom = txPrev;
@@ -252,7 +252,7 @@ bool CEcaStake::GetModifier(uint64_t& nStakeModifier)
 
 CDataStream CEcaStake::GetUniqueness()
 {
-    //The unique identifier for a ojacoin stake is the outpoint
+    //The unique identifier for a amaterasu stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
     ss << nPosition << txFrom.GetHash();
     return ss;

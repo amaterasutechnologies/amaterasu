@@ -440,7 +440,7 @@ static const struct {
 		(xl) = l; (xh) = h; \
 	} while (0)
 
-#define UojacoinERLEAVE(xl, xh)   do { \
+#define UamaterasuERLEAVE(xl, xh)   do { \
 		sph_u32 l, h, t; \
 		l = (xl); h = (xh); \
 		t = (l ^ SPH_T32(h << 16)) & SPH_C32(0xFFFF0000); \
@@ -459,7 +459,7 @@ static const struct {
 #else
 
 #define INTERLEAVE(l, h)
-#define UojacoinERLEAVE(l, h)
+#define UamaterasuERLEAVE(l, h)
 
 #endif
 
@@ -1692,7 +1692,7 @@ keccak_core(sph_keccak_context *kc, const void *data, size_t len, size_t lim)
 		kc->u.narrow[41] = ~kc->u.narrow[41]; \
 		/* un-interleave */ \
 		for (j = 0; j < 50; j += 2) \
-			UojacoinERLEAVE(kc->u.narrow[j], kc->u.narrow[j + 1]); \
+			UamaterasuERLEAVE(kc->u.narrow[j], kc->u.narrow[j + 1]); \
 		for (j = 0; j < d; j += 4) \
 			sph_enc32le_aligned(u.tmp + j, kc->u.narrow[j >> 2]); \
 		memcpy(dst, u.tmp, d); \

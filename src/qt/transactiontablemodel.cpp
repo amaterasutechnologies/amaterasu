@@ -344,7 +344,7 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::SendToSelf:
         return tr("Payment to yourself");
     case TransactionRecord::StakeMint:
-        return tr("ojacoin Stake");
+        return tr("amaterasu Stake");
     case TransactionRecord::StakeZECA:
         return tr("zECA Stake");
     case TransactionRecord::Generated:
@@ -360,15 +360,15 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::Obfuscated:
         return tr("Obfuscated");
     case TransactionRecord::ZerocoinMint:
-        return tr("Converted ojacoin to zECA");
+        return tr("Converted amaterasu to zECA");
     case TransactionRecord::ZerocoinSpend:
         return tr("Spent zECA");
     case TransactionRecord::RecvFromZerocoinSpend:
-        return tr("Received ojacoin from zECA");
+        return tr("Received amaterasu from zECA");
     case TransactionRecord::ZerocoinSpend_Change_zEca:
         return tr("Minted Change as zECA from zECA Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
-        return tr("Converted zECA to ojacoin");
+        return tr("Converted zECA to amaterasu");
 
     default:
         return QString();

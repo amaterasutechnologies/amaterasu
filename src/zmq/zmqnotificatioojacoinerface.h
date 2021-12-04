@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_ZMQ_ZMQNOTIFICATIOojacoinERFACE_H
-#define BITCOIN_ZMQ_ZMQNOTIFICATIOojacoinERFACE_H
+#ifndef BITCOIN_ZMQ_ZMQNOTIFICATIOamaterasuERFACE_H
+#define BITCOIN_ZMQ_ZMQNOTIFICATIOamaterasuERFACE_H
 
 #include "validationinterface.h"
 #include <string>
@@ -12,12 +12,12 @@
 class CBlockIndex;
 class CZMQAbstractNotifier;
 
-class CZMQNotificatioojacoinerface : public Cvalidationinterface
+class CZMQNotificatioamaterasuerface : public Cvalidationinterface
 {
 public:
-    virtual ~CZMQNotificatioojacoinerface();
+    virtual ~CZMQNotificatioamaterasuerface();
 
-    static CZMQNotificatioojacoinerface* CreateWithArguments(const std::map<std::string, std::string> &args);
+    static CZMQNotificatioamaterasuerface* CreateWithArguments(const std::map<std::string, std::string> &args);
 
 protected:
     bool Initialize();
@@ -29,10 +29,10 @@ protected:
     void NotifyTransactionLock(const CTransaction &tx);
 
 private:
-    CZMQNotificatioojacoinerface();
+    CZMQNotificatioamaterasuerface();
 
     void *pcontext;
     std::list<CZMQAbstractNotifier*> notifiers;
 };
 
-#endif // BITCOIN_ZMQ_ZMQNOTIFICATIOojacoinERFACE_H
+#endif // BITCOIN_ZMQ_ZMQNOTIFICATIOamaterasuERFACE_H

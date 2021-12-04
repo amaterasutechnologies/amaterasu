@@ -38,7 +38,7 @@ public:
         Encrypt,        /** Encrypt unencrypted wallet */
         ToggleLock,     /** Toggle wallet lock state */
         ChangePass,     /** Change passphrase */
-        Send_ECA,       /** Send ojacoin */
+        Send_ECA,       /** Send amaterasu */
         Send_zECA,      /** Send zECA */
         Mint_zECA,      /** Mint zECA */
         BIP_38,         /** BIP38 menu */

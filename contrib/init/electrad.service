@@ -1,19 +1,19 @@
 [Unit]
-Description=ojacoin's distributed currency daemon
+Description=amaterasu's distributed currency daemon
 After=network.target
 
 [Service]
-User=ojacoin
-Group=ojacoin
+User=amaterasu
+Group=amaterasu
 
 Type=forking
-PIDFile=/var/lib/ojacoind/ojacoind.pid
+PIDFile=/var/lib/amaterasud/amaterasud.pid
 
-ExecStart=/usr/bin/ojacoind -daemon -pid=/var/lib/ojacoind/ojacoind.pid \
-          -conf=/etc/ojacoin/ojacoin.conf -datadir=/var/lib/ojacoind
+ExecStart=/usr/bin/amaterasud -daemon -pid=/var/lib/amaterasud/amaterasud.pid \
+          -conf=/etc/amaterasu/amaterasu.conf -datadir=/var/lib/amaterasud
 
-ExecStop=-/usr/bin/ojacoin-cli -conf=/etc/ojacoin/ojacoin.conf \
-         -datadir=/var/lib/ojacoind stop
+ExecStop=-/usr/bin/amaterasu-cli -conf=/etc/amaterasu/amaterasu.conf \
+         -datadir=/var/lib/amaterasud stop
 
 Restart=always
 PrivateTmp=true

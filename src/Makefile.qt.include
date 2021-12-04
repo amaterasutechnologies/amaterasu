@@ -2,43 +2,43 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/ojacoin-qt
+bin_PROGRAMS += qt/amaterasu-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# ojacoin qt core #
+# amaterasu qt core #
 QT_TS = \
-  qt/locale/ojacoin_bg.ts \
-  qt/locale/ojacoin_ca.ts \
-  qt/locale/ojacoin_cs.ts \
-  qt/locale/ojacoin_da.ts \
-  qt/locale/ojacoin_de.ts \
-  qt/locale/ojacoin_en.ts \
-  qt/locale/ojacoin_en_US.ts \
-  qt/locale/ojacoin_eo.ts \
-  qt/locale/ojacoin_es.ts \
-  qt/locale/ojacoin_es_ES.ts \
-  qt/locale/ojacoin_fi.ts \
-  qt/locale/ojacoin_fr_FR.ts \
-  qt/locale/ojacoin_hi_IN.ts \
-  qt/locale/ojacoin_hr.ts \
-  qt/locale/ojacoin_hr_HR.ts \
-  qt/locale/ojacoin_it.ts \
-  qt/locale/ojacoin_ja.ts \
-  qt/locale/ojacoin_ko_KR.ts \
-  qt/locale/ojacoin_lt_LT.ts \
-  qt/locale/ojacoin_nl.ts \
-  qt/locale/ojacoin_pl.ts \
-  qt/locale/ojacoin_pt.ts \
-  qt/locale/ojacoin_pt_BR.ts \
-  qt/locale/ojacoin_ro_RO.ts \
-  qt/locale/ojacoin_ru.ts \
-  qt/locale/ojacoin_sk.ts \
-  qt/locale/ojacoin_sv.ts \
-  qt/locale/ojacoin_tr.ts \
-  qt/locale/ojacoin_uk.ts \
-  qt/locale/ojacoin_vi.ts \
-  qt/locale/ojacoin_zh_CN.ts \
-  qt/locale/ojacoin_zh_TW.ts
+  qt/locale/amaterasu_bg.ts \
+  qt/locale/amaterasu_ca.ts \
+  qt/locale/amaterasu_cs.ts \
+  qt/locale/amaterasu_da.ts \
+  qt/locale/amaterasu_de.ts \
+  qt/locale/amaterasu_en.ts \
+  qt/locale/amaterasu_en_US.ts \
+  qt/locale/amaterasu_eo.ts \
+  qt/locale/amaterasu_es.ts \
+  qt/locale/amaterasu_es_ES.ts \
+  qt/locale/amaterasu_fi.ts \
+  qt/locale/amaterasu_fr_FR.ts \
+  qt/locale/amaterasu_hi_IN.ts \
+  qt/locale/amaterasu_hr.ts \
+  qt/locale/amaterasu_hr_HR.ts \
+  qt/locale/amaterasu_it.ts \
+  qt/locale/amaterasu_ja.ts \
+  qt/locale/amaterasu_ko_KR.ts \
+  qt/locale/amaterasu_lt_LT.ts \
+  qt/locale/amaterasu_nl.ts \
+  qt/locale/amaterasu_pl.ts \
+  qt/locale/amaterasu_pt.ts \
+  qt/locale/amaterasu_pt_BR.ts \
+  qt/locale/amaterasu_ro_RO.ts \
+  qt/locale/amaterasu_ru.ts \
+  qt/locale/amaterasu_sk.ts \
+  qt/locale/amaterasu_sv.ts \
+  qt/locale/amaterasu_tr.ts \
+  qt/locale/amaterasu_uk.ts \
+  qt/locale/amaterasu_vi.ts \
+  qt/locale/amaterasu_zh_CN.ts \
+  qt/locale/amaterasu_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -125,16 +125,16 @@ BITCOIN_MM = \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/ojacoin.moc \
+  qt/amaterasu.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_ojacoin.cpp
-QT_QRC = qt/ojacoin.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_ojacoin_locale.cpp
-QT_QRC_LOCALE = qt/ojacoin_locale.qrc
+QT_QRC_CPP = qt/qrc_amaterasu.cpp
+QT_QRC = qt/amaterasu.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_amaterasu_locale.cpp
+QT_QRC_LOCALE = qt/amaterasu_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -258,12 +258,12 @@ RES_ICONS = \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
   qt/res/icons/tx_mined.png \
-  qt/res/icons/unit_ojacoin.png \
-  qt/res/icons/unit_mojacoin.png \
-  qt/res/icons/unit_uojacoin.png \
-  qt/res/icons/unit_tojacoin.png \
-  qt/res/icons/unit_tmojacoin.png \
-  qt/res/icons/unit_tuojacoin.png \
+  qt/res/icons/unit_amaterasu.png \
+  qt/res/icons/unit_mamaterasu.png \
+  qt/res/icons/unit_uamaterasu.png \
+  qt/res/icons/unit_tamaterasu.png \
+  qt/res/icons/unit_tmamaterasu.png \
+  qt/res/icons/unit_tuamaterasu.png \
   qt/res/icons/bittrex.png \
   qt/res/icons/discord.png \
   qt/res/icons/facebook.png \
@@ -348,8 +348,8 @@ RES_IMAGES = \
   qt/res/images/about.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
-  qt/res/images/ojacoin_logo_horizontal.png \
-  qt/res/images/ojacoin_logo_horizontal_dark.png \
+  qt/res/images/amaterasu_logo_horizontal.png \
+  qt/res/images/amaterasu_logo_horizontal_dark.png \
   qt/res/images/downArrow_dark.png \
   qt/res/images/downArrow_small_dark.png \
   qt/res/images/downArrow_small.png \
@@ -368,7 +368,7 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/ojacoin-qt-res.rc
+BITCOIN_RC = qt/res/amaterasu-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms
@@ -390,71 +390,71 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_ojacoin_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_amaterasu_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# ojacoin-qt binary #
-qt_ojacoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# amaterasu-qt binary #
+qt_amaterasu_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_ojacoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_amaterasu_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_ojacoin_qt_SOURCES = qt/ojacoin.cpp
+qt_amaterasu_qt_SOURCES = qt/amaterasu.cpp
 if TARGET_DARWIN
-  qt_ojacoin_qt_SOURCES += $(BITCOIN_MM)
+  qt_amaterasu_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_ojacoin_qt_SOURCES += $(BITCOIN_RC)
+  qt_amaterasu_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_ojacoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_amaterasu_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_ojacoin_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+qt_amaterasu_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_ojacoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_amaterasu_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_ojacoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBMEMENV) $(LIBLEVELDB_SSE42) \
+qt_amaterasu_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBMEMENV) $(LIBLEVELDB_SSE42) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_ojacoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_ojacoin_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+qt_amaterasu_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_amaterasu_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/ojacoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+$(srcdir)/qt/amaterasustrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/ojacoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/ojacoin.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/amaterasustrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/amaterasu.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/ojacoin_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/amaterasu_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name ojacoin_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name amaterasu_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name ojacoin $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name amaterasu $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_ojacoin_locale.qrc
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_amaterasu_locale.qrc
 
 CLEANFILES += $(CLEAN_QT)
 
-ojacoin_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_ojacoin_qt_OBJECTS) qt/ojacoin-qt$(EXEEXT) $(LIBBITCOINQT)
+amaterasu_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_amaterasu_qt_OBJECTS) qt/amaterasu-qt$(EXEEXT) $(LIBBITCOINQT)
 
-ojacoin_qt : qt/ojacoin-qt$(EXEEXT)
+amaterasu_qt : qt/amaterasu-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

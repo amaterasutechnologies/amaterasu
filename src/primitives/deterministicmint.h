@@ -1,10 +1,10 @@
 // Copyright (c) 2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_DETERMINISTICMINT_H
-#define ojacoin_DETERMINISTICMINT_H
+#ifndef amaterasu_DETERMINISTICMINT_H
+#define amaterasu_DETERMINISTICMINT_H
 
 #include <libzerocoin/Denominations.h>
 #include <uint256.h>
@@ -65,4 +65,4 @@ public:
     };
 };
 
-#endif //ojacoin_DETERMINISTICMINT_H
+#endif //amaterasu_DETERMINISTICMINT_H

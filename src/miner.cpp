@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -38,7 +38,7 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// ojacoinMiner
+// amaterasuMiner
 //
 
 //
@@ -444,7 +444,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
         nLastBlockTx = nBlockTx;
         nLastBlockSize = nBlockSize;
-        LogPrint("ojacoin", "CreateNewBlock(): total size %u\n", nBlockSize);
+        LogPrint("amaterasu", "CreateNewBlock(): total size %u\n", nBlockSize);
 
         // Compute final coinbase transaction.
         if (!fProofOfStake) {
@@ -545,7 +545,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
-            return error("ojacoinMiner : generated block is stale");
+            return error("amaterasuMiner : generated block is stale");
     }
 
     // Remove key from key pool
@@ -565,7 +565,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     if (!ProcessNewBlock(state, NULL, pblock)) {
         if (pblock->IsZerocoinStake())
             pwalletMain->zecaTracker->RemovePending(pblock->vtx[1].GetHash());
-        return error("ojacoinMiner : ProcessNewBlock, block not accepted");
+        return error("amaterasuMiner : ProcessNewBlock, block not accepted");
     }
 
     for (CNode* node : vNodes) {
@@ -583,9 +583,9 @@ int nMintableLastCheck = 0;
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
-    LogPrintf("ojacoinMiner started\n");
+    LogPrintf("amaterasuMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("ojacoin-miner");
+    RenameThread("amaterasu-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
@@ -678,7 +678,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             continue;
         }
 
-        LogPrint("ojacoin", "Running ojacoinMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+        LogPrint("amaterasu", "Running amaterasuMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
             ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         //

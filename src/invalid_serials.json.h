@@ -1,12 +1,12 @@
 // Copyright (c) 2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 
 
-#ifndef ojacoin_INVALID_SERIALS_JSON_H
-#define ojacoin_INVALID_SERIALS_JSON_H
+#ifndef amaterasu_INVALID_SERIALS_JSON_H
+#define amaterasu_INVALID_SERIALS_JSON_H
 
 #include <string>
 
@@ -23,4 +23,4 @@ std::string LoadInvalidSerials()
     return str;
 }
 
-#endif //ojacoin_INVALID_SERIALS_JSON_H
+#endif //amaterasu_INVALID_SERIALS_JSON_H

@@ -1,6 +1,6 @@
 // Copyright (c) 2012-2013 The PPCoin developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -36,9 +36,9 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of(0, 0xfd11f4e7u);
 
 // Get time weight
-int64_t GetWeight(int64_t ojacoinervalBeginning, int64_t ojacoinervalEnd)
+int64_t GetWeight(int64_t amaterasuervalBeginning, int64_t amaterasuervalEnd)
 {
-    return min(ojacoinervalEnd - ojacoinervalBeginning - nStakeMinAge, (int64_t)nStakeMaxAge);
+    return min(amaterasuervalEnd - amaterasuervalBeginning - nStakeMinAge, (int64_t)nStakeMaxAge);
 }
 
 // Get the last stake modifier and its generation time from a given block
@@ -56,7 +56,7 @@ static bool GetLastStakeModifier(const CBlockIndex* pindex, uint64_t& nStakeModi
 }
 
 // Get selection interval section (in seconds)
-static int64_t GetStakeModifierSelectioojacoinervalSection(int nSection)
+static int64_t GetStakeModifierSelectioamaterasuervalSection(int nSection)
 {
     assert(nSection >= 0 && nSection < 64);
     int64_t a = getIntervalVersion(fTestNet) * 63 / (63 + ((63 - nSection) * (MODIFIER_INTERVAL_RATIO - 1)));
@@ -64,22 +64,22 @@ static int64_t GetStakeModifierSelectioojacoinervalSection(int nSection)
 }
 
 // Get stake modifier selection interval (in seconds)
-static int64_t GetStakeModifierSelectioojacoinerval()
+static int64_t GetStakeModifierSelectioamaterasuerval()
 {
-    int64_t nSelectioojacoinerval = 0;
+    int64_t nSelectioamaterasuerval = 0;
     for (int nSection = 0; nSection < 64; nSection++) {
-        nSelectioojacoinerval += GetStakeModifierSelectioojacoinervalSection(nSection);
+        nSelectioamaterasuerval += GetStakeModifierSelectioamaterasuervalSection(nSection);
     }
-    return nSelectioojacoinerval;
+    return nSelectioamaterasuerval;
 }
 
 // select a block from the candidate blocks in vSortedByTimestamp, excluding
 // already selected blocks in vSelectedBlocks, and with timestamp up to
-// nSelectioojacoinervalStop.
+// nSelectioamaterasuervalStop.
 static bool SelectBlockFromCandidates(
     vector<pair<int64_t, uint256> >& vSortedByTimestamp,
     map<uint256, const CBlockIndex*>& mapSelectedBlocks,
-    int64_t nSelectioojacoinervalStop,
+    int64_t nSelectioamaterasuervalStop,
     uint64_t nStakeModifierPrev,
     const CBlockIndex** pindexSelected)
 {
@@ -93,7 +93,7 @@ static bool SelectBlockFromCandidates(
             return error("SelectBlockFromCandidates: failed to find block index for candidate block %s", item.second.ToString().c_str());
 
         const CBlockIndex* pindex = mapBlockIndex[item.second];
-        if (fSelected && pindex->GetBlockTime() > nSelectioojacoinervalStop)
+        if (fSelected && pindex->GetBlockTime() > nSelectioamaterasuervalStop)
             break;
 
         //if the lowest block height (vSortedByTimestamp[0]) is >= switch height, use new modifier calc
@@ -180,11 +180,11 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
     // Sort candidate blocks by timestamp
     vector<pair<int64_t, uint256> > vSortedByTimestamp;
     vSortedByTimestamp.reserve(64 * getIntervalVersion(fTestNet) / nStakeTargetSpacing);
-    int64_t nSelectioojacoinerval = GetStakeModifierSelectioojacoinerval();
-    int64_t nSelectioojacoinervalStart = (pindexPrev->GetBlockTime() / getIntervalVersion(fTestNet)) * getIntervalVersion(fTestNet) - nSelectioojacoinerval;
+    int64_t nSelectioamaterasuerval = GetStakeModifierSelectioamaterasuerval();
+    int64_t nSelectioamaterasuervalStart = (pindexPrev->GetBlockTime() / getIntervalVersion(fTestNet)) * getIntervalVersion(fTestNet) - nSelectioamaterasuerval;
     const CBlockIndex* pindex = pindexPrev;
 
-    while (pindex && pindex->GetBlockTime() >= nSelectioojacoinervalStart) {
+    while (pindex && pindex->GetBlockTime() >= nSelectioamaterasuervalStart) {
         vSortedByTimestamp.push_back(make_pair(pindex->GetBlockTime(), pindex->GetBlockHash()));
         pindex = pindex->pprev;
     }
@@ -195,14 +195,14 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
 
     // Select 64 blocks from candidate blocks to generate stake modifier
     uint64_t nStakeModifierNew = 0;
-    int64_t nSelectioojacoinervalStop = nSelectioojacoinervalStart;
+    int64_t nSelectioamaterasuervalStop = nSelectioamaterasuervalStart;
     map<uint256, const CBlockIndex*> mapSelectedBlocks;
     for (int nRound = 0; nRound < min(64, (int)vSortedByTimestamp.size()); nRound++) {
         // add an interval section to the current selection round
-        nSelectioojacoinervalStop += GetStakeModifierSelectioojacoinervalSection(nRound);
+        nSelectioamaterasuervalStop += GetStakeModifierSelectioamaterasuervalSection(nRound);
 
         // select a block from the candidates of current round
-        if (!SelectBlockFromCandidates(vSortedByTimestamp, mapSelectedBlocks, nSelectioojacoinervalStop, nStakeModifier, &pindex))
+        if (!SelectBlockFromCandidates(vSortedByTimestamp, mapSelectedBlocks, nSelectioamaterasuervalStop, nStakeModifier, &pindex))
             return error("ComputeNextStakeModifier: unable to select block at round %d", nRound);
 
         // write the entropy bit of the selected block
@@ -212,7 +212,7 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeMod
         mapSelectedBlocks.insert(make_pair(pindex->GetBlockHash(), pindex));
         if (fDebug || GetBoolArg("-printstakemodifier", false))
             LogPrintf("ComputeNextStakeModifier: selected round %d stop=%s height=%d bit=%d\n",
-                nRound, DateTimeStrFormat("%Y-%m-%d %H:%M:%S", nSelectioojacoinervalStop).c_str(), pindex->nHeight, pindex->GetStakeEntropyBit());
+                nRound, DateTimeStrFormat("%Y-%m-%d %H:%M:%S", nSelectioamaterasuervalStop).c_str(), pindex->nHeight, pindex->GetStakeEntropyBit());
     }
 
     // Print selection map for visualization of the selected blocks
@@ -253,12 +253,12 @@ bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64_t& nStakeModifier, int
     const CBlockIndex* pindexFrom = mapBlockIndex[hashBlockFrom];
     nStakeModifierHeight = pindexFrom->nHeight;
     nStakeModifierTime = pindexFrom->GetBlockTime();
-    int64_t nStakeModifierSelectioojacoinerval = GetStakeModifierSelectioojacoinerval();
+    int64_t nStakeModifierSelectioamaterasuerval = GetStakeModifierSelectioamaterasuerval();
     const CBlockIndex* pindex = pindexFrom;
     CBlockIndex* pindexNext = chainActive[pindexFrom->nHeight + 1];
 
     // loop to find the stake modifier later by a selection interval
-    while (nStakeModifierTime < pindexFrom->GetBlockTime() + nStakeModifierSelectioojacoinerval) {
+    while (nStakeModifierTime < pindexFrom->GetBlockTime() + nStakeModifierSelectioamaterasuerval) {
         if (!pindexNext) {
             // Should never happen
             return error("Null pindexNext\n");

@@ -84,11 +84,11 @@ int FindFile(const InternalKeyComparator& icmp,
     const FileMetaData* f = files[mid];
     if (icmp.InternalKeyComparator::Compare(f->largest.Encode(), key) < 0) {
       // Key at "mid.largest" is < "target".  Therefore all
-      // files at or before "mid" are uojacoineresting.
+      // files at or before "mid" are uamaterasueresting.
       left = mid + 1;
     } else {
       // Key at "mid.largest" is >= "target".  Therefore all files
-      // after "mid" are uojacoineresting.
+      // after "mid" are uamaterasueresting.
       right = mid;
     }
   }

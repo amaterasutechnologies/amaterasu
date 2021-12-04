@@ -104,7 +104,7 @@ public slots:
     void showPeers();
     /** Switch to wallet-repair tab and show */
     void showRepair();
-    /** Open external (default) editor with ojacoin.conf */
+    /** Open external (default) editor with amaterasu.conf */
     void showConfEditor();
     /** Open external (default) editor with masternode.conf */
     //void showMNConfEditor();

@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_ZEROCOIN_H
-#define ojacoin_ZEROCOIN_H
+#ifndef amaterasu_ZEROCOIN_H
+#define amaterasu_ZEROCOIN_H
 
 #include <amount.h>
 #include <limits.h>
@@ -248,4 +248,4 @@ public:
     int GetNeededSpends();
 };
 
-#endif //ojacoin_ZEROCOIN_H
+#endif //amaterasu_ZEROCOIN_H

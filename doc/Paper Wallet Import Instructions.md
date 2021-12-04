@@ -1,11 +1,11 @@
 # Paper Wallet Import Instructions
 
 <p align="center">
-    <img src="https://ojacoin.org/wp-content/uploads/2021/07/ojacoin-logo1x.png"
+    <img src="https://amaterasu.org/wp-content/uploads/2021/07/amaterasu-logo1x.png"
         height="130">
 </p>
 
-### Before you begin, you’ll need to download the `ojacoin QT wallet` : https://ojacoin.org/#download
+### Before you begin, you’ll need to download the `amaterasu QT wallet` : https://amaterasu.org/#download
 
 
 ## Windows/Mac/Linux 
@@ -28,9 +28,9 @@
 *The wallet will restart and rescan the blockchain (it takes a few seconds)*
 
 
-If you experience any difficulties, please contact one of our experienced ojacoin community members, available on these platforms: 
+If you experience any difficulties, please contact one of our experienced amaterasu community members, available on these platforms: 
 
-Telegram: https://t.me/ojacoin_org ojacoin
+Telegram: https://t.me/amaterasu_org amaterasu
 
 Discord: https://discord.gg/uxzxuh9S
 (please join the `#help-support` channel for assistance) 

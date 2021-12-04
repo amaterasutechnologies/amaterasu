@@ -68,15 +68,15 @@ TESTS =
 BENCHMARKS=
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += ojacoind
+  bin_PROGRAMS += amaterasud
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += ojacoin-cli ojacoin-tx
+  bin_PROGRAMS += amaterasu-cli amaterasu-tx
 endif
 
 .PHONY: FORCE
-# ojacoin #
+# amaterasu #
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
@@ -185,7 +185,7 @@ BITCOIN_CORE_H = \
   zecawallet.h \
   zmq/zmqabstractnotifier.h \
   zmq/zmqconfig.h \
-  zmq/zmqnotificatioojacoinerface.h \
+  zmq/zmqnotificatioamaterasuerface.h \
   zmq/zmqpublishnotifier.h
 
 obj/build.h: FORCE
@@ -194,7 +194,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between ojacoind and ojacoin-qt
+# server: shared between amaterasud and amaterasu-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -238,11 +238,11 @@ libbitcoin_zmq_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
 libbitcoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
-  zmq/zmqnotificatioojacoinerface.cpp \
+  zmq/zmqnotificatioamaterasuerface.cpp \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between ojacoind and ojacoin-qt, but only linked
+# wallet: shared between amaterasud and amaterasu-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -338,7 +338,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/Params.cpp \
   libzerocoin/SerialNumberSignatureOfKnowledge.cpp
 
-# common: shared between ojacoind, and ojacoin-qt and non-server tools
+# common: shared between amaterasud, and amaterasu-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -401,7 +401,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between ojacoin-cli and ojacoin-qt
+# cli: shared between amaterasu-cli and amaterasu-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -411,16 +411,16 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# ojacoind binary #
-ojacoind_SOURCES = ojacoind.cpp
-ojacoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-ojacoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-ojacoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# amaterasud binary #
+amaterasud_SOURCES = amaterasud.cpp
+amaterasud_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+amaterasud_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+amaterasud_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ojacoind_SOURCES += ojacoind-res.rc
+amaterasud_SOURCES += amaterasud-res.rc
 endif
-ojacoind_LDADD = \
+amaterasud_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -433,38 +433,38 @@ ojacoind_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-ojacoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+amaterasud_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# ojacoin-cli binary #
-ojacoin_cli_SOURCES = ojacoin-cli.cpp
-ojacoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-ojacoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-ojacoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# amaterasu-cli binary #
+amaterasu_cli_SOURCES = amaterasu-cli.cpp
+amaterasu_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+amaterasu_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+amaterasu_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ojacoin_cli_SOURCES += ojacoin-cli-res.rc
+amaterasu_cli_SOURCES += amaterasu-cli-res.rc
 endif
 
-ojacoin_cli_LDADD = \
+amaterasu_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-ojacoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+amaterasu_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# ojacoin-tx binary #
-ojacoin_tx_SOURCES = ojacoin-tx.cpp
-ojacoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-ojacoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-ojacoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# amaterasu-tx binary #
+amaterasu_tx_SOURCES = amaterasu-tx.cpp
+amaterasu_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+amaterasu_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+amaterasu_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ojacoin_tx_SOURCES += ojacoin-tx-res.rc
+amaterasu_tx_SOURCES += amaterasu-tx-res.rc
 endif
 
-ojacoin_tx_LDADD = \
+amaterasu_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -472,7 +472,7 @@ ojacoin_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-ojacoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+amaterasu_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

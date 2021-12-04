@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_ZECAWALLET_H
-#define ojacoin_ZECAWALLET_H
+#ifndef amaterasu_ZECAWALLET_H
+#define amaterasu_ZECAWALLET_H
 
 #include <map>
 #include "libzerocoin/Coin.h"
@@ -46,4 +46,4 @@ private:
     uint512 GetZerocoinSeed(uint32_t n);
 };
 
-#endif //ojacoin_ZECAWALLET_H
+#endif //amaterasu_ZECAWALLET_H

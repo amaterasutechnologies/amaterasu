@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_MINTPOOL_H
-#define ojacoin_MINTPOOL_H
+#ifndef amaterasu_MINTPOOL_H
+#define amaterasu_MINTPOOL_H
 
 #include <map>
 #include <list>
@@ -51,4 +51,4 @@ public:
 };
 
 
-#endif //ojacoin_MINTPOOL_H
+#endif //amaterasu_MINTPOOL_H

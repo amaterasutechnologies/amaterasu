@@ -1,25 +1,25 @@
-# /etc/conf.d/ojacoind: config file for /etc/init.d/ojacoind
+# /etc/conf.d/amaterasud: config file for /etc/init.d/amaterasud
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/ojacoin/ojacoin.conf"
+#BITCOIND_CONFIGFILE="/etc/amaterasu/amaterasu.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/ojacoind"
+#BITCOIND_PIDDIR="/var/run/amaterasud"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/ojacoind.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/amaterasud.pid"
 
-# Where to write ojacoind data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/ojacoind"
+# Where to write amaterasud data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/amaterasud"
 
-# User and group to own ojacoind process
-#BITCOIND_USER="ojacoin"
-#BITCOIND_GROUP="ojacoin"
+# User and group to own amaterasud process
+#BITCOIND_USER="amaterasu"
+#BITCOIND_GROUP="amaterasu"
 
-# Path to ojacoind executable
-#BITCOIND_BIN="/usr/bin/ojacoind"
+# Path to amaterasud executable
+#BITCOIND_BIN="/usr/bin/amaterasud"
 
-# Nice value to run ojacoind under
+# Nice value to run amaterasud under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

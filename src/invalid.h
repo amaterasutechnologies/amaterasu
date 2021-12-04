@@ -1,12 +1,12 @@
 // Copyright (c) 2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_INVALID_H
-#define ojacoin_INVALID_H
+#ifndef amaterasu_INVALID_H
+#define amaterasu_INVALID_H
 
-#endif //ojacoin_INVALID_H
+#endif //amaterasu_INVALID_H
 
 #include <libzerocoin/bignum.h>
 #include <univalue/include/univalue.h>

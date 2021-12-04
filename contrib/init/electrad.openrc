@@ -2,24 +2,24 @@
 
 # backward compatibility for existing gentoo layout
 #
-if [ -d "/var/lib/ojacoin/.ojacoin" ]; then
-	BITCOIND_DEFAULT_DATADIR="/var/lib/ojacoin/.ojacoin"
+if [ -d "/var/lib/amaterasu/.amaterasu" ]; then
+	BITCOIND_DEFAULT_DATADIR="/var/lib/amaterasu/.amaterasu"
 else
-	BITCOIND_DEFAULT_DATADIR="/var/lib/ojacoind"
+	BITCOIND_DEFAULT_DATADIR="/var/lib/amaterasud"
 fi
 
-BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/ojacoin/ojacoin.conf}
-BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/ojacoind}
-BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/ojacoind.pid}
+BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/amaterasu/amaterasu.conf}
+BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/amaterasud}
+BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/amaterasud.pid}
 BITCOIND_DATADIR=${BITCOIND_DATADIR:-${BITCOIND_DEFAULT_DATADIR}}
-BITCOIND_USER=${BITCOIND_USER:-ojacoin}
-BITCOIND_GROUP=${BITCOIND_GROUP:-ojacoin}
-BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/ojacoind}
+BITCOIND_USER=${BITCOIND_USER:-amaterasu}
+BITCOIND_GROUP=${BITCOIND_GROUP:-amaterasu}
+BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/amaterasud}
 
-name="ojacoin Daemon"
-description="ojacoin crypto-currency p2p network daemon"
+name="amaterasu Daemon"
+description="amaterasu crypto-currency p2p network daemon"
 
-command="/usr/bin/ojacoind"
+command="/usr/bin/amaterasud"
 command_args="-pid=\"${BITCOIND_PIDFILE}\" \
 		-conf=\"${BITCOIND_CONFIGFILE}\" \
 		-datadir=\"${BITCOIND_DATADIR}\" \
@@ -65,7 +65,7 @@ checkconfig()
 {
 	if ! grep -qs '^rpcpassword=' "${BITCOIND_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run ojacoind."
+		eerror "ERROR: You must set a secure rpcpassword to run amaterasud."
 		eerror "The setting must appear in ${BITCOIND_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
@@ -78,7 +78,7 @@ checkconfig()
 		eerror "It is also recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"ojacoin Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"amaterasu Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

@@ -1,20 +1,20 @@
-# OJA
+# TERASU
 
  
 
-# What is OJA?
-OJA Coin  is a high-speed, and cost-friendly blockchain. It's explicitly built to speed up transactions with almost zero transaction fee. We use a power efficient algorithm hash, NIST5 which is a winning algorithm of the US National Institute.
+# What is TERASU?
+TERASU Coin  is a high-speed, and cost-friendly blockchain. It's explicitly built to speed up transactions with almost zero transaction fee. We use a power efficient algorithm hash, NIST5 which is a winning algorithm of the US National Institute.
  
-So the OJA blockchain is not only fast and cost-friendly but also environmentally friendly. These elements are very important for society nowadays. And it also becomes our focus in building OJA infrastructure and platform.
+So the TERASU blockchain is not only fast and cost-friendly but also environmentally friendly. These elements are very important for society nowadays. And it also becomes our focus in building TERASU infrastructure and platform.
 
 
 <a name="specifications"></a>
 ## Technical Specifications
 <table>
-<tr> <td>Ticker</td><td>OJA</td></tr>
+<tr> <td>Ticker</td><td>TERASU</td></tr>
 <tr> <td>Algorithm</td><td>NIST5</td></tr>
 <tr> <td>Consensus</td><td>Proof-of-Work</td></tr>
-<tr> <td>Maximum Supply</td><td>720,000,000 </td></tr>
+<tr> <td>Maximum Supply</td><td>15,000,000 </td></tr>
 <tr> <td>Block Time</td><td>60 Seconds</td></tr>
 <tr> <td>Block Size</td><td>10 MB</td></tr>
 <tr> <td>Transactions Per Second</td><td>~800</td></tr>
@@ -42,13 +42,13 @@ Leverage Blockchain technology and provide users with fast and secure transactio
 We believe Blockchain is the future for many purposes such as data storage, payments and operations. Integration of Blockchain for our daily use leads to higher efficiency in applications.
 
 ### Fast, Today
-Time is one of the key elements in our lives. Especially when it comes to financial transactions, lack of existing money transaction speed, companies or individual users are facing delays. This leads to a slowdown in activities. OJA offers a solution to cover such bad processes. Time is money, money is OJA.
+Time is one of the key elements in our lives. Especially when it comes to financial transactions, lack of existing money transaction speed, companies or individual users are facing delays. This leads to a slowdown in activities. TERASU offers a solution to cover such bad processes. Time is money, money is TERASU.
 
 ### Safe & Anonymous
-Security is another very important point on which today's world stands. By using OJA you can make secure payments be done, which gives confidence to the community.
+Security is another very important point on which today's world stands. By using TERASU you can make secure payments be done, which gives confidence to the community.
 
 ### Security
-Security is another very important point on which today's world stands. OJA chose to use NIST5 as its hashing algorithm because it has been proven to be more secure and power-efficient than other leading algorithms.
+Security is another very important point on which today's world stands. TERASU chose to use NIST5 as its hashing algorithm because it has been proven to be more secure and power-efficient than other leading algorithms.
 
 NIST5 is an exhaustive set of guidelines for how organizations can prevent, detect, and respond to cyberattacks. 
 
@@ -56,7 +56,7 @@ It is officially known as the Framework for Improving Critical Infrastructure Cy
 
 NIST5 was originally aimed at industries essential to economic and national security such as banking, defense, commerce, and communications.
 
-However, a wide variety of organizations in all industries have since adopted it, including in cryptocurrency, like in OJA Coin for example.
+However, a wide variety of organizations in all industries have since adopted it, including in cryptocurrency, like in TERASU Coin for example.
 
 There are 5 elements of the NIST5,
 Identity
@@ -69,11 +69,11 @@ There are a total of 108 security controls that provide specific security action
 
 
 ### Decentralized, Distributed
-Applications are the future need for higher efficiency and cost reduction. OJA is your solution for decentralized Payments.
+Applications are the future need for higher efficiency and cost reduction. TERASU is your solution for decentralized Payments.
 
 ### Power Efficiency
-OJA coin uses the NIST5 hash, which is chosen as the winning algorithm by the US Nation of Science competition as power efficient hash algorithm. It is not only more secure but also environtment friendly.
+TERASU coin uses the NIST5 hash, which is chosen as the winning algorithm by the US Nation of Science competition as power efficient hash algorithm. It is not only more secure but also environtment friendly.
 
 
 # Why NIST5?
-OJA chose to use NIST5 as its hashing algorithm because it has been proven to be more secure and power-efficient than other leading algorithms. NIST5 is a combination of the finalists and winner of the US National Institute of Standards and Technology Hash Function Competition (specifically BLAKE, Grøstl, JH, Keccak/SHA-3, and Skein).
+TERASU chose to use NIST5 as its hashing algorithm because it has been proven to be more secure and power-efficient than other leading algorithms. NIST5 is a combination of the finalists and winner of the US National Institute of Standards and Technology Hash Function Competition (specifically BLAKE, Grøstl, JH, Keccak/SHA-3, and Skein).

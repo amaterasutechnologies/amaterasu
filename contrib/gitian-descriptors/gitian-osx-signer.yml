@@ -1,5 +1,5 @@
 ---
-name: "ojacoin-dmg-signer"
+name: "amaterasu-dmg-signer"
 suites:
 - "bionic"
 architectures:
@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/ojacoin-project/ojacoin-detached-sigs.git"
+- "url": "https://github.com/amaterasu-project/amaterasu-detached-sigs.git"
   "dir": "signature"
 files:
-- "ojacoin-osx-unsigned.tar.gz"
+- "amaterasu-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -27,8 +27,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=ojacoin-osx-unsigned.tar.gz
-  SIGNED=ojacoin-osx-signed.dmg
+  UNSIGNED=amaterasu-osx-unsigned.tar.gz
+  SIGNED=amaterasu-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"

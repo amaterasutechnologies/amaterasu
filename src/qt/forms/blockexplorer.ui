@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../ojacoin.qrc"/>
+  <include location="../amaterasu.qrc"/>
  </resources>
  <connections/>
 </ui>

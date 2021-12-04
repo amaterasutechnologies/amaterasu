@@ -118,7 +118,7 @@ BitcoinGUI::BitcoinGUI(const NetworkStyle* networkStyle, QWidget* parent) : QMai
 
     GUIUtil::restoreWindowGeometry("nWindow", QSize(850, 550), this);
 
-    QString windowTitle = tr("OJA Wallet") + " - ";
+    QString windowTitle = tr("Amaterasu Wallet") + " - ";
 #ifdef ENABLE_WALLET
     /* if compiled with wallet support, -disablewallet can still disable the wallet */
     enableWallet = !GetBoolArg("-disablewallet", false);
@@ -312,48 +312,48 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     overviewAction->setStatusTip(tr("Show general overview of wallet"));
     overviewAction->setToolTip(overviewAction->statusTip());
     overviewAction->setCheckable(true);
-    webmainAction = new QAction(QIcon(":/icons/explorer"), tr("&ojacoin Project"), this);
-    webmainAction->setStatusTip(tr("ojacoin Project Website"));
+    webmainAction = new QAction(QIcon(":/icons/explorer"), tr("&amaterasu Project"), this);
+    webmainAction->setStatusTip(tr("amaterasu Project Website"));
     webmainAction->setToolTip(overviewAction->statusTip());
     webmainAction->setCheckable(true);
     facebookAction = new QAction(QIcon(":/icons/facebook"), tr("&Facebook"), this);
-    facebookAction->setStatusTip(tr("ojacoin Facebook"));
+    facebookAction->setStatusTip(tr("amaterasu Facebook"));
     facebookAction->setToolTip(facebookAction->statusTip());
     facebookAction->setCheckable(true);
     twitterAction = new QAction(QIcon(":/icons/twitter"), tr("&Twitter"), this);
-    twitterAction->setStatusTip(tr("ojacoin Twitter"));
+    twitterAction->setStatusTip(tr("amaterasu Twitter"));
     twitterAction->setToolTip(twitterAction->statusTip());
     twitterAction->setCheckable(true);
     discordAction = new QAction(QIcon(":/icons/discord"), tr("&Discord"), this);
-    discordAction->setStatusTip(tr("ojacoin Discord"));
+    discordAction->setStatusTip(tr("amaterasu Discord"));
     discordAction->setToolTip(discordAction->statusTip());
     discordAction->setCheckable(true);
     youtubeAction = new QAction(QIcon(":/icons/youtube"), tr("&Youtube"), this);
-    youtubeAction->setStatusTip(tr("ojacoin Youtube"));
+    youtubeAction->setStatusTip(tr("amaterasu Youtube"));
     youtubeAction->setToolTip(youtubeAction->statusTip());
     youtubeAction->setCheckable(true);
     telegramAction = new QAction(QIcon(":/icons/telegram"), tr("&Telegram"), this);
-    telegramAction->setStatusTip(tr("ojacoin Telegram"));
+    telegramAction->setStatusTip(tr("amaterasu Telegram"));
     telegramAction->setToolTip(telegramAction->statusTip());
     telegramAction->setCheckable(true);
     redditAction = new QAction(QIcon(":/icons/reddit"), tr("&Reddit"), this);
-    redditAction->setStatusTip(tr("ojacoin Reddit"));
+    redditAction->setStatusTip(tr("amaterasu Reddit"));
     redditAction->setToolTip(redditAction->statusTip());
     redditAction->setCheckable(true);
     cmcAction = new QAction(QIcon(":/icons/cmc"), tr("&CoinMarketCap"), this);
-    cmcAction->setStatusTip(tr("CoinMarketCap ojacoin"));
+    cmcAction->setStatusTip(tr("CoinMarketCap amaterasu"));
     cmcAction->setToolTip(cmcAction->statusTip());
     cmcAction->setCheckable(true);
     exchangesAction = new QAction(QIcon(":/icons/explorer"), tr("&Exchanges"), this);
-    exchangesAction->setStatusTip(tr("Markets to buy and sell ojacoin Coin (ojacoin)"));
+    exchangesAction->setStatusTip(tr("Markets to buy and sell amaterasu Coin (amaterasu)"));
     exchangesAction->setToolTip(exchangesAction->statusTip());
     exchangesAction->setCheckable(true);
-    ojacoinBlockExplorerAction = new QAction(QIcon(":/icons/explorer"), tr("&ojacoin block explorer"), this);
-    ojacoinBlockExplorerAction->setStatusTip(tr("ojacoin blockchain explorer"));
-    ojacoinBlockExplorerAction->setToolTip(ojacoinBlockExplorerAction->statusTip());
-    ojacoinBlockExplorerAction->setCheckable(true);
-    githubAction = new QAction(QIcon(":/icons/github"), tr("&ojacoin Project Github"), this);
-    githubAction->setStatusTip(tr("ojacoin Project Github"));
+    amaterasuBlockExplorerAction = new QAction(QIcon(":/icons/explorer"), tr("&amaterasu block explorer"), this);
+    amaterasuBlockExplorerAction->setStatusTip(tr("amaterasu blockchain explorer"));
+    amaterasuBlockExplorerAction->setToolTip(amaterasuBlockExplorerAction->statusTip());
+    amaterasuBlockExplorerAction->setCheckable(true);
+    githubAction = new QAction(QIcon(":/icons/github"), tr("&amaterasu Project Github"), this);
+    githubAction->setStatusTip(tr("amaterasu Project Github"));
     githubAction->setToolTip(githubAction->statusTip());
     githubAction->setCheckable(true);
   
@@ -365,7 +365,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a ojacoin address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a amaterasu address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -376,7 +376,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     tabGroup->addAction(sendCoinsAction);
 
     receiveCoinsAction = new QAction(QIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and ojacoin: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and amaterasu: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -446,7 +446,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     connect(youtubeAction, SIGNAL(triggered()), this, SLOT(youtubeActionClicked()));
     connect(redditAction, SIGNAL(triggered()), this, SLOT(redditActionClicked()));
     connect(exchangesAction, SIGNAL(triggered()), this, SLOT(exchangesActionClicked()));
-    connect(ojacoinBlockExplorerAction, SIGNAL(triggered()), this, SLOT(ojacoinBlockExplorerActionClicked()));
+    connect(amaterasuBlockExplorerAction, SIGNAL(triggered()), this, SLOT(amaterasuBlockExplorerActionClicked()));
     connect(cmcAction, SIGNAL(triggered()), this, SLOT(cmcActionClicked()));
     connect(githubAction, SIGNAL(triggered()), this, SLOT(githubActionClicked()));
 	
@@ -456,8 +456,8 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     quitAction->setStatusTip(tr("Quit application"));
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
-    aboutAction = new QAction(networkStyle->getAppIcon(), tr("&About ojacoin Core"), this);
-    aboutAction->setStatusTip(tr("Show information about ojacoin Core"));
+    aboutAction = new QAction(networkStyle->getAppIcon(), tr("&About amaterasu Core"), this);
+    aboutAction->setStatusTip(tr("Show information about amaterasu Core"));
     aboutAction->setMenuRole(QAction::AboutRole);
 #if QT_VERSION < 0x050000
     aboutQtAction = new QAction(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"), tr("About &Qt"), this);
@@ -467,7 +467,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     aboutQtAction->setStatusTip(tr("Show information about Qt"));
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
     optionsAction = new QAction(QIcon(":/icons/options"), tr("&Options..."), this);
-    optionsAction->setStatusTip(tr("Modify configuration options for ojacoin"));
+    optionsAction->setStatusTip(tr("Modify configuration options for amaterasu"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
     toggleHideAction = new QAction(networkStyle->getAppIcon(), tr("&Show / Hide"), this);
     toggleHideAction->setStatusTip(tr("Show or hide the main Window"));
@@ -483,9 +483,9 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     unlockWalletAction->setToolTip(tr("Unlock wallet"));
     lockWalletAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Lock Wallet"), this);
     signMessageAction = new QAction(QIcon(":/icons/edit"), tr("Sign &message..."), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your ojacoin addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your amaterasu addresses to prove you own them"));
     verifyMessageAction = new QAction(QIcon(":/icons/transaction_0"), tr("&Verify message..."), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified ojacoin addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified amaterasu addresses"));
     bip38ToolAction = new QAction(QIcon(":/icons/key"), tr("&BIP38 tool"), this);
     bip38ToolAction->setToolTip(tr("Encrypt and decrypt private keys using a passphrase"));
     multiSendAction = new QAction(QIcon(":/icons/edit"), tr("&MultiSend"), this);
@@ -522,13 +522,13 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     multisigSignAction->setStatusTip(tr("Sign with a multisignature address"));
 
     openAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_FileIcon), tr("Open &URI..."), this);
-    openAction->setStatusTip(tr("Open a ojacoin: URI or payment request"));
+    openAction->setStatusTip(tr("Open a amaterasu: URI or payment request"));
     openBlockExplorerAction = new QAction(QIcon(":/icons/explorer"), tr("&Blockchain explorer"), this);
     openBlockExplorerAction->setStatusTip(tr("Block explorer window"));
 
     showHelpMessageAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_MessageBoxInformation), tr("&Command-line options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
-    showHelpMessageAction->setStatusTip(tr("Show the ojacoin Core help message to get a list with possible ojacoin command-line options"));
+    showHelpMessageAction->setStatusTip(tr("Show the amaterasu Core help message to get a list with possible amaterasu command-line options"));
 
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutClicked()));
@@ -627,7 +627,7 @@ void BitcoinGUI::createMenuBar()
 		Links->addAction(youtubeAction);
 		Links->addAction(redditAction);
 		Links->addAction(exchangesAction);
-		Links->addAction(ojacoinBlockExplorerAction);
+		Links->addAction(amaterasuBlockExplorerAction);
 		Links->addAction(cmcAction);
                 Links->addAction(githubAction);
 	*/
@@ -776,7 +776,7 @@ void BitcoinGUI::createTrayIcon(const NetworkStyle* networkStyle)
 {
 #ifndef Q_OS_MAC
     trayIcon = new QSystemTrayIcon(this);
-    QString toolTip = tr("ojacoin Core client") + " " + networkStyle->getTitleAddText();
+    QString toolTip = tr("amaterasu Core client") + " " + networkStyle->getTitleAddText();
     trayIcon->setToolTip(toolTip);
     trayIcon->setIcon(networkStyle->getAppIcon());
     trayIcon->hide();
@@ -857,15 +857,15 @@ void BitcoinGUI::showHelpMessageClicked()
 
 void BitcoinGUI::webmainActionClicked()
 {
-	QDesktopServices::openUrl(QUrl("https://www.ojacoin.net"));
+	QDesktopServices::openUrl(QUrl("https://www.amaterasu.net"));
 }
 void BitcoinGUI::facebookActionClicked()
 {
-        QDesktopServices::openUrl(QUrl("https://www.facebook.com/ojacoin.coin"));
+        QDesktopServices::openUrl(QUrl("https://www.facebook.com/amaterasu.coin"));
 }
 void BitcoinGUI::twitterActionClicked()
 {
-        QDesktopServices::openUrl(QUrl("https://twitter.com/ojacoin4"));
+        QDesktopServices::openUrl(QUrl("https://twitter.com/amaterasu4"));
 }
 void BitcoinGUI::discordActionClicked()
 {
@@ -873,7 +873,7 @@ void BitcoinGUI::discordActionClicked()
 }
 void BitcoinGUI::telegramActionClicked()
 {
-        QDesktopServices::openUrl(QUrl("https://t.me/ojacoincryptocurrency"));
+        QDesktopServices::openUrl(QUrl("https://t.me/amaterasucryptocurrency"));
 }
 void BitcoinGUI::youtubeActionClicked()
 {
@@ -881,13 +881,13 @@ void BitcoinGUI::youtubeActionClicked()
 }
 void BitcoinGUI::redditActionClicked()
 {
-        QDesktopServices::openUrl(QUrl("https://www.reddit.com/user/ojacoin-coin"));
+        QDesktopServices::openUrl(QUrl("https://www.reddit.com/user/amaterasu-coin"));
 }
 void BitcoinGUI::exchangesActionClicked()
 {
         QDesktopServices::openUrl(QUrl("https://"));
 }
-void BitcoinGUI::ojacoinBlockExplorerActionClicked()
+void BitcoinGUI::amaterasuBlockExplorerActionClicked()
 {
         QDesktopServices::openUrl(QUrl("http://161.35.189.61:3001/"));
 }
@@ -897,7 +897,7 @@ void BitcoinGUI::cmcActionClicked()
 }
 void BitcoinGUI::githubActionClicked()
 {
-	QDesktopServices::openUrl(QUrl("https://github.com/ojacoin/ojacoin/"));
+	QDesktopServices::openUrl(QUrl("https://github.com/amaterasu/amaterasu/"));
 }
 
 #ifdef ENABLE_WALLET
@@ -1019,7 +1019,7 @@ void BitcoinGUI::setNumConnections(int count)
     }
     QIcon connectionItem = QIcon(icon).pixmap(STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE);
     labelConnectionsIcon->setIcon(connectionItem);
-    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to ojacoin network", "", count));
+    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to amaterasu network", "", count));
 }
 
 void BitcoinGUI::setNumBlocks(int count)
@@ -1168,7 +1168,7 @@ void BitcoinGUI::setNumBlocks(int count)
 
 void BitcoinGUI::message(const QString& title, const QString& message, unsigned int style, bool* ret)
 {
-    QString strTitle = tr("ojacoin Core"); // default title
+    QString strTitle = tr("amaterasu Core"); // default title
     // Default to information icon
     int nMBoxIcon = QMessageBox::Information;
     int nNotifyIcon = Notificator::Information;
@@ -1193,7 +1193,7 @@ void BitcoinGUI::message(const QString& title, const QString& message, unsigned 
             break;
         }
     }
-    // Append title to "ojacoin - "
+    // Append title to "amaterasu - "
     if (!msgType.isEmpty())
         strTitle += " - " + msgType;
 

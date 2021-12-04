@@ -4,7 +4,7 @@
 // Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2017-2018 The NavCoin Core developers
 // Copyright (c) 2018-2019 The Myce developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -56,7 +56,7 @@ using namespace std;
 using namespace libzerocoin;
 
 #if defined(NDEBUG)
-#error "ojacoin cannot be compiled without assertions."
+#error "amaterasu cannot be compiled without assertions."
 #endif
 
 /**
@@ -115,7 +115,7 @@ static void CheckBlockIndex();
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "ojacoin very Signed Message:\n";
+const string strMessageMagic = "amaterasu very Signed Message:\n";
 
 // Internal stuff
 namespace
@@ -2083,7 +2083,7 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight, bool fProofOfStake, uint64_t nCoinAge)
 {
 
-    int64_t nRewardCoinYear = 500 * CENT; // 50% interest
+    int64_t nRewardCoinYear = 5 * CENT; // 50% interest
 
     int64_t nSubsidy = 0;
     if (fProofOfStake)
@@ -2091,21 +2091,21 @@ int64_t GetBlockValue(int nHeight, bool fProofOfStake, uint64_t nCoinAge)
         if (nHeight > nHardForkBlock) // 1350 blocks per day (~492750 blocks per year)
         {
             if (nHeight < nHardForkBlock + 492750) // first year
-                nRewardCoinYear = 500 * CENT; // 2.5% interest
+                nRewardCoinYear = 5 * CENT; // 2.5% interest
             else if (nHeight < nHardForkBlock + 492750 * 2) // second year
-                nRewardCoinYear = 500 * CENT; // 1.25% interest
+                nRewardCoinYear = 5 * CENT; // 1.25% interest
             else if (nHeight < nHardForkBlock + 492750 * 3) // third year
-                nRewardCoinYear = 500 * CENT; // 0.63% interest
+                nRewardCoinYear = 5 * CENT; // 0.63% interest
             else if (nHeight < nHardForkBlock + 492750 * 4) // fourth year
-                nRewardCoinYear = 500 * CENT; // 0.31% interest
+                nRewardCoinYear = 5 * CENT; // 0.31% interest
             else if (nHeight < nHardForkBlock + 492750 * 5) // fifth year
-                nRewardCoinYear = 500 * CENT; // 0.16% interest
+                nRewardCoinYear = 5 * CENT; // 0.16% interest
             else if (nHeight < nHardForkBlock + 492750 * 6) // sixth year
-                nRewardCoinYear = 500 * CENT; // 0.08% interest
+                nRewardCoinYear = 5 * CENT; // 0.08% interest
             else if (nHeight < nHardForkBlock + 492750 * 7) // seventh year
-                nRewardCoinYear = 500 * CENT; // 0.04% interest
+                nRewardCoinYear = 5 * CENT; // 0.04% interest
             else // eighth year and beyond
-                nRewardCoinYear = 5000 * CENT; // 0.02% interest
+                nRewardCoinYear = 5 * CENT; // 0.02% interest
 
             if (nCoinAge == uint64_t(0))
                 nSubsidy = nRewardCoinYear / 500;
@@ -2121,25 +2121,25 @@ int64_t GetBlockValue(int nHeight, bool fProofOfStake, uint64_t nCoinAge)
     {
         if (nHeight == 2)
         {
-            nSubsidy = 300000000 * COIN;	   
+            nSubsidy = 3750000 * COIN;	   
         } else if (nHeight <= 11522 && nHeight > 2)
         {
-            nSubsidy = 500 * COIN;
+            nSubsidy = 5 * COIN;
         } else if (nHeight <= 11811 && nHeight > 11522)
         {
-            nSubsidy = 500 * COIN;
+            nSubsidy = 5 * COIN;
         } else if (nHeight <= 250000 && nHeight > 11811)
         {
-            nSubsidy = 500 * COIN;
+            nSubsidy = 5 * COIN;
         } else if (nHeight <= 500000 && nHeight > 250000)
         {
-            nSubsidy = 250 * COIN;
+            nSubsidy = 5 * COIN;
         } else if (nHeight <= 750000 && nHeight > 500000)
         {
-            nSubsidy = 125 * COIN;
+            nSubsidy = 5 * COIN;
         } else if (nHeight > 750000)
         {
-            nSubsidy = 62.5 * COIN;
+            nSubsidy = 5 * COIN;
         } else {
             nSubsidy = 0 * COIN;
         }
@@ -2567,7 +2567,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
         const CTransaction& tx = block.vtx[i];
 
         /** UNDO ZEROCOIN DATABASING
-         * note we only undo zerocoin databasing in the following statement, value to and from ojacoin
+         * note we only undo zerocoin databasing in the following statement, value to and from amaterasu
          * addresses should still be handled by the typical bitcoin based undo code
          * */
         if (tx.ContainsZerocoins()) {
@@ -2710,7 +2710,7 @@ static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck()
 {
-    RenameThread("ojacoin-scriptch");
+    RenameThread("amaterasu-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2797,12 +2797,12 @@ bool RecalculateECASupply(int nHeightStart)
     // if (nHeightStart == Params().Zerocoin_StartHeight())
         // nSupplyPrev = CAmount(5449796547496199);
 
-    uiInterface.ShowProgress(_("Recalculating ojacoin supply..."), 0);
+    uiInterface.ShowProgress(_("Recalculating amaterasu supply..."), 0);
     while (true) {
         if (pindex->nHeight % 1000 == 0) {
             LogPrintf("%s : block %d...\n", __func__, pindex->nHeight);
             int percent = std::max(1, std::min(99, (int)((double)((pindex->nHeight - nHeightStart) * 100) / (chainActive.Height() - nHeightStart))));
-            uiInterface.ShowProgress(_("Recalculating ojacoin supply..."), percent);
+            uiInterface.ShowProgress(_("Recalculating amaterasu supply..."), percent);
         }
 
         CBlock block;
@@ -2864,7 +2864,7 @@ bool RecalculateECASupply(int nHeightStart)
 
 bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError)
 {
-    // ojacoin: recalculate Accumulator Checkpoints that failed to database properly
+    // amaterasu: recalculate Accumulator Checkpoints that failed to database properly
     if (!listMissingCheckpoints.empty()) {
         uiInterface.ShowProgress(_("Calculating missing accumulators..."), 0);
         LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -3465,7 +3465,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
     chainActive.SetTip(pindexNew);
 
 #ifdef ENABLE_WALLET
-    // If turned on AutoZeromint will automatically convert ojacoin to zECA
+    // If turned on AutoZeromint will automatically convert amaterasu to zECA
     if (pwalletMain && pwalletMain->isZeromintEnabled())
         pwalletMain->AutoZeromint();
 #endif // ENABLE_WALLET
@@ -4316,7 +4316,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 nHeight = (*mi).second->nHeight + 1;
         }
 
-        // ojacoin
+        // amaterasu
         // It is entierly possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
@@ -5738,7 +5738,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return false;
         }
 
-        // ojacoin: We use certain sporks during IBD, so check to see if they are
+        // amaterasu: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         bool fMissingSporks = !pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
                 !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&

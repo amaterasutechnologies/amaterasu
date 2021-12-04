@@ -912,12 +912,12 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About ojacoin Dialog */
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About ojacoin Contents */
+/* About amaterasu Dialog */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About amaterasu Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About ojacoin text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About amaterasu text */
 margin-right:10px;
 }
 
@@ -944,11 +944,11 @@ background-color:#1c1242;
 
 QLabel#labelOverviewHeaderRight {
 qproperty-alignment: 'AlignVCenter | AlignRight';
-background-image: url(':/images/ojacoin_logo_horizontal_dark');
+background-image: url(':/images/amaterasu_logo_horizontal_dark');
 background-repeat: no-repeat;
 }
 
-QWidget .QFrame#frame_Header { /* Header with Page-Title and ojacoin-image */
+QWidget .QFrame#frame_Header { /* Header with Page-Title and amaterasu-image */
 min-width:400px;
 background-color:#1c1242;
 }
@@ -996,7 +996,7 @@ font-weight:normal;
 /* min-height:30px; */
 }
 
-QWidget .QFrame#frame_Balances .QLabel#label_5 { /* ojacoin Balances Label */
+QWidget .QFrame#frame_Balances .QLabel#label_5 { /* amaterasu Balances Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
 background-color:transparent;
@@ -1240,7 +1240,7 @@ margin-right:5px;
 padding-right:5px;
 }
 
-QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalanceTextz { /* Available ojacoin Label */
+QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalanceTextz { /* Available amaterasu Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
 color:#fff;
@@ -1250,7 +1250,7 @@ font-weight:bold;
 font-size:12px;
 }
 
-QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalancez { /* Available ojacoin Balance */
+QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalancez { /* Available amaterasu Balance */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:26px;
 font-weight:normal;

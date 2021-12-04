@@ -1,10 +1,10 @@
 // Copyright (c) 2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ojacoin_SPENDTYPE_H
-#define ojacoin_SPENDTYPE_H
+#ifndef amaterasu_SPENDTYPE_H
+#define amaterasu_SPENDTYPE_H
 
 #include <cstdint>
 
@@ -17,4 +17,4 @@ namespace libzerocoin {
     };
 }
 
-#endif //ojacoin_SPENDTYPE_H
+#endif //amaterasu_SPENDTYPE_H

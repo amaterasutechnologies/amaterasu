@@ -1,6 +1,6 @@
 // Copyright (c) 2014 The Bitcoin developers
 // Copyright (c) 2017 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +11,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between ojacoin-cli and ojacoind)
- * of a given instance of the ojacoin system.
+ * CBaseChainParams defines the base parameters (shared between amaterasu-cli and amaterasud)
+ * of a given instance of the amaterasu system.
  */
 class CBaseChainParams
 {

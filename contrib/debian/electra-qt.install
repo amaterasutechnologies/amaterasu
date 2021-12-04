@@ -1,6 +1,6 @@
-usr/local/bin/ojacoin-qt usr/bin
+usr/local/bin/amaterasu-qt usr/bin
 share/pixmaps/bitcoin32.xpm usr/share/pixmaps
 share/pixmaps/bitcoin16.xpm usr/share/pixmaps
 share/pixmaps/bitcoin128.png usr/share/pixmaps
-debian/ojacoin-qt.desktop usr/share/applications
-debian/ojacoin-qt.protocol usr/share/kde4/services/
+debian/amaterasu-qt.desktop usr/share/applications
+debian/amaterasu-qt.protocol usr/share/kde4/services/

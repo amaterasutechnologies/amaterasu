@@ -7,7 +7,7 @@
 #define BITCOIN_QT_BITCOINGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/ojacoin-config.h"
+#include "config/amaterasu-config.h"
 #endif
 
 #include "amount.h"
@@ -138,7 +138,7 @@ private:
     QAction* youtubeAction;
     QAction* redditAction;
     QAction* exchangesAction;
-    QAction* ojacoinBlockExplorerAction;
+    QAction* amaterasuBlockExplorerAction;
     QAction* cmcAction;
     QAction* githubAction;
     QAction* webmainAction;
@@ -216,7 +216,7 @@ public slots:
     void youtubeActionClicked();
     void redditActionClicked();
     void exchangesActionClicked();
-    void ojacoinBlockExplorerActionClicked();
+    void amaterasuBlockExplorerActionClicked();
     void cmcActionClicked();
     void githubActionClicked();
     

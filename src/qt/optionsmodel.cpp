@@ -1,12 +1,12 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2017-2019 The ojacoin developers
+// Copyright (c) 2017-2019 The amaterasu developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/ojacoin-config.h"
+#include "config/amaterasu-config.h"
 #endif
 
 #include "optionsmodel.h"
@@ -63,7 +63,7 @@ void OptionsModel::Init()
 
     // Display
     if (!settings.contains("nDisplayUnit"))
-        settings.setValue("nDisplayUnit", BitcoinUnits::ojacoin);
+        settings.setValue("nDisplayUnit", BitcoinUnits::amaterasu);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
 
     if (!settings.contains("strThirdPartyTxUrls"))
@@ -94,10 +94,10 @@ void OptionsModel::Init()
         settings.setValue("nPreferredDenom", 0);
     nPreferredDenom = settings.value("nPreferredDenom", "0").toLongLong();
 
-    if (!settings.contains("nAnonymizeojacoinAmount"))
-        settings.setValue("nAnonymizeojacoinAmount", 1000);
+    if (!settings.contains("nAnonymizeamaterasuAmount"))
+        settings.setValue("nAnonymizeamaterasuAmount", 1000);
 
-    nAnonymizeojacoinAmount = settings.value("nAnonymizeojacoinAmount").toLongLong();
+    nAnonymizeamaterasuAmount = settings.value("nAnonymizeamaterasuAmount").toLongLong();
 
 //    if (!settings.contains("fShowMasternodesTab"))
 //        settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
@@ -171,8 +171,8 @@ void OptionsModel::Init()
         SoftSetArg("-zeromintpercentage", settings.value("nZeromintPercentage").toString().toStdString());
     if (settings.contains("nPreferredDenom"))
         SoftSetArg("-preferredDenom", settings.value("nPreferredDenom").toString().toStdString());
-    if (settings.contains("nAnonymizeojacoinAmount"))
-        SoftSetArg("-anonymizeojacoinamount", settings.value("nAnonymizeojacoinAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeamaterasuAmount"))
+        SoftSetArg("-anonymizeamaterasuamount", settings.value("nAnonymizeamaterasuAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -183,7 +183,7 @@ void OptionsModel::Reset()
 
     // Remove all entries from our QSettings object
     settings.clear();
-    resetSettings = true; // Needed in ojacoin.cpp during shotdown to also remove the window positions
+    resetSettings = true; // Needed in amaterasu.cpp during shotdown to also remove the window positions
 
     // default setting for OptionsModel::StartAtStartup - disabled
     if (GUIUtil::GetStartOnSystemStartup())
@@ -265,8 +265,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return QVariant(nZeromintPercentage);
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
-        case AnonymizeojacoinAmount:
-            return QVariant(nAnonymizeojacoinAmount);
+        case AnonymizeamaterasuAmount:
+            return QVariant(nAnonymizeamaterasuAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -400,10 +400,10 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             emit hideOrphansChanged(fHideOrphans);
             break;
 
-        case AnonymizeojacoinAmount:
-            nAnonymizeojacoinAmount = value.toInt();
-            settings.setValue("nAnonymizeojacoinAmount", nAnonymizeojacoinAmount);
-            emit anonymizeojacoinAmountChanged(nAnonymizeojacoinAmount);
+        case AnonymizeamaterasuAmount:
+            nAnonymizeamaterasuAmount = value.toInt();
+            settings.setValue("nAnonymizeamaterasuAmount", nAnonymizeamaterasuAmount);
+            emit anonymizeamaterasuAmountChanged(nAnonymizeamaterasuAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();

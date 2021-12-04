@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zmqnotificatioojacoinerface.h"
+#include "zmqnotificatioamaterasuerface.h"
 #include "zmqpublishnotifier.h"
 
 #include "version.h"
@@ -15,11 +15,11 @@ void zmqError(const char *str)
     LogPrint("zmq", "zmq: Error: %s, errno=%s\n", str, zmq_strerror(errno));
 }
 
-CZMQNotificatioojacoinerface::CZMQNotificatioojacoinerface() : pcontext(NULL)
+CZMQNotificatioamaterasuerface::CZMQNotificatioamaterasuerface() : pcontext(NULL)
 {
 }
 
-CZMQNotificatioojacoinerface::~CZMQNotificatioojacoinerface()
+CZMQNotificatioamaterasuerface::~CZMQNotificatioamaterasuerface()
 {
     Shutdown();
 
@@ -29,9 +29,9 @@ CZMQNotificatioojacoinerface::~CZMQNotificatioojacoinerface()
     }
 }
 
-CZMQNotificatioojacoinerface* CZMQNotificatioojacoinerface::CreateWithArguments(const std::map<std::string, std::string> &args)
+CZMQNotificatioamaterasuerface* CZMQNotificatioamaterasuerface::CreateWithArguments(const std::map<std::string, std::string> &args)
 {
-    CZMQNotificatioojacoinerface* notificatioojacoinerface = NULL;
+    CZMQNotificatioamaterasuerface* notificatioamaterasuerface = NULL;
     std::map<std::string, CZMQNotifierFactory> factories;
     std::list<CZMQAbstractNotifier*> notifiers;
 
@@ -58,21 +58,21 @@ CZMQNotificatioojacoinerface* CZMQNotificatioojacoinerface::CreateWithArguments(
 
     if (!notifiers.empty())
     {
-        notificatioojacoinerface = new CZMQNotificatioojacoinerface();
-        notificatioojacoinerface->notifiers = notifiers;
+        notificatioamaterasuerface = new CZMQNotificatioamaterasuerface();
+        notificatioamaterasuerface->notifiers = notifiers;
 
-        if (!notificatioojacoinerface->Initialize())
+        if (!notificatioamaterasuerface->Initialize())
         {
-            delete notificatioojacoinerface;
-            notificatioojacoinerface = NULL;
+            delete notificatioamaterasuerface;
+            notificatioamaterasuerface = NULL;
         }
     }
 
-    return notificatioojacoinerface;
+    return notificatioamaterasuerface;
 }
 
 // Called at startup to conditionally set up ZMQ socket(s)
-bool CZMQNotificatioojacoinerface::Initialize()
+bool CZMQNotificatioamaterasuerface::Initialize()
 {
     LogPrint("zmq", "zmq: Initialize notification interface\n");
     assert(!pcontext);
@@ -109,7 +109,7 @@ bool CZMQNotificatioojacoinerface::Initialize()
 }
 
 // Called during shutdown sequence
-void CZMQNotificatioojacoinerface::Shutdown()
+void CZMQNotificatioamaterasuerface::Shutdown()
 {
     LogPrint("zmq", "zmq: Shutdown notification interface\n");
     if (pcontext)
@@ -126,7 +126,7 @@ void CZMQNotificatioojacoinerface::Shutdown()
     }
 }
 
-void CZMQNotificatioojacoinerface::UpdatedBlockTip(const CBlockIndex *pindex)
+void CZMQNotificatioamaterasuerface::UpdatedBlockTip(const CBlockIndex *pindex)
 {
     for (std::list<CZMQAbstractNotifier*>::iterator i = notifiers.begin(); i!=notifiers.end(); )
     {
@@ -143,7 +143,7 @@ void CZMQNotificatioojacoinerface::UpdatedBlockTip(const CBlockIndex *pindex)
     }
 }
 
-void CZMQNotificatioojacoinerface::SyncTransaction(const CTransaction &tx, const CBlock *pblock)
+void CZMQNotificatioamaterasuerface::SyncTransaction(const CTransaction &tx, const CBlock *pblock)
 {
     for (std::list<CZMQAbstractNotifier*>::iterator i = notifiers.begin(); i!=notifiers.end(); )
     {
@@ -160,7 +160,7 @@ void CZMQNotificatioojacoinerface::SyncTransaction(const CTransaction &tx, const
     }
 }
 
-void CZMQNotificatioojacoinerface::NotifyTransactionLock(const CTransaction &tx)
+void CZMQNotificatioamaterasuerface::NotifyTransactionLock(const CTransaction &tx)
 {
     for (std::list<CZMQAbstractNotifier*>::iterator i = notifiers.begin(); i!=notifiers.end(); )
     {

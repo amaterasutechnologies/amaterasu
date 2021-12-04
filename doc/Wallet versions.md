@@ -16,7 +16,7 @@
 
 # 2.0.3 **WIP**
 
--Add CMC\ojacoin to Links menu
+-Add CMC\amaterasu to Links menu
 
 -Use new fake stake patch from PIVX
 

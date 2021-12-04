@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2018 The ojacoin developers
+// Copyright (c) 2018 The amaterasu developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -269,11 +269,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop ojacoin server.");
+            "\nStop amaterasu server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "ojacoin server stopping";
+    return "amaterasu server stopping";
 }
 
 
@@ -358,37 +358,37 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* ojacoin features */
-        {"ojacoin", "masternode", &masternode, true, true, false},
-        {"ojacoin", "listmasternodes", &listmasternodes, true, true, false},
-        {"ojacoin", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"ojacoin", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"ojacoin", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"ojacoin", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"ojacoin", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"ojacoin", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"ojacoin", "masternodedebug", &masternodedebug, true, true, false},
-        {"ojacoin", "startmasternode", &startmasternode, true, true, false},
-        {"ojacoin", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"ojacoin", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"ojacoin", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"ojacoin", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"ojacoin", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"ojacoin", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"ojacoin", "mnbudget", &mnbudget, true, true, false},
-        {"ojacoin", "preparebudget", &preparebudget, true, true, false},
-        {"ojacoin", "submitbudget", &submitbudget, true, true, false},
-        {"ojacoin", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"ojacoin", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"ojacoin", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"ojacoin", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"ojacoin", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"ojacoin", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"ojacoin", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"ojacoin", "checkbudgets", &checkbudgets, true, true, false},
-        {"ojacoin", "mnsync", &mnsync, true, true, false},
-        {"ojacoin", "spork", &spork, true, true, false},
-        {"ojacoin", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* amaterasu features */
+        {"amaterasu", "masternode", &masternode, true, true, false},
+        {"amaterasu", "listmasternodes", &listmasternodes, true, true, false},
+        {"amaterasu", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"amaterasu", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"amaterasu", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"amaterasu", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"amaterasu", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"amaterasu", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"amaterasu", "masternodedebug", &masternodedebug, true, true, false},
+        {"amaterasu", "startmasternode", &startmasternode, true, true, false},
+        {"amaterasu", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"amaterasu", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"amaterasu", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"amaterasu", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"amaterasu", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"amaterasu", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"amaterasu", "mnbudget", &mnbudget, true, true, false},
+        {"amaterasu", "preparebudget", &preparebudget, true, true, false},
+        {"amaterasu", "submitbudget", &submitbudget, true, true, false},
+        {"amaterasu", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"amaterasu", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"amaterasu", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"amaterasu", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"amaterasu", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"amaterasu", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"amaterasu", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"amaterasu", "checkbudgets", &checkbudgets, true, true, false},
+        {"amaterasu", "mnsync", &mnsync, true, true, false},
+        {"amaterasu", "spork", &spork, true, true, false},
+        {"amaterasu", "getpoolinfo", &getpoolinfo, true, true, false},
 
 #ifdef ENABLE_WALLET
         /* Wallet */
@@ -623,7 +623,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> ojacoin-cli " + methodname + " " + args + "\n";
+    return "> amaterasu-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)
