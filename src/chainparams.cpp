@@ -111,23 +111,23 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xb5;
-        pchMessageStart[1] = 0xa1;
-        pchMessageStart[2] = 0xf2;
-        pchMessageStart[3] = 0xa7;
+        pchMessageStart[0] = 0xb6;
+        pchMessageStart[1] = 0xb3;
+        pchMessageStart[2] = 0xd4;
+        pchMessageStart[3] = 0xe5;
         vAlertPubKey = ParseHex("025208d9c58b8edb90e7eed266d2aed4b5d1c81a6668083a296bf37798acbdc9ba");
         nDefaultPort = 5817;
-        bnProofOfWorkLimit = ~uint256(0) >> 20;
+        bnProofOfWorkLimit = ~uint256(0) >> 16;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 8100; // 75%
         nRejectBlockOutdatedMajority = 10260; // 95%
         nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
-        nTargetTimespan = 5 * 60; // 5 minutes
-        nTargetSpacing = 60; // 64 seconds
+        nTargetTimespan = 2 * 60; // 2 minutes
+        nTargetSpacing = 120; // 120 seconds
         nMaturity = 10;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 720000000 * COIN;
+        nMaxMoneyOut = 15000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 99999999;
@@ -160,9 +160,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1625443096;
+        genesis.nTime = 1638668255;
         genesis.nBits = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 8194118;
+        genesis.nNonce = 8209183;
 
         uint256 hashTarget = uint256().SetCompact(genesis.nBits);
 
@@ -171,16 +171,13 @@ public:
         hashGenesisBlock = genesis.GetHash();
         //printf("Merkle hash main: %s\n", genesis.hashMerkleRoot.ToString().c_str());
         //printf("Block hash main: %s\n", hashGenesisBlock.ToString().c_str());
-        assert(genesis.hashMerkleRoot == uint256("0xc5f622bad72a7eb7bf7e0699b8810e4a0371d742250d8332d3a4a444522a59ed"));
-        assert(hashGenesisBlock == uint256("0x000000e1fc6cc3e6332e286f0ff88d381bd64bc91b6ba56bc57d9d63cff2b789"));
+        assert(genesis.hashMerkleRoot == uint256("0x2b13a6df3bf707d7ac52e1ee60dfaed678137a395e934b19d4a345728615d398"));
+        assert(hashGenesisBlock == uint256("0x0000fdbd258564f5c8eef6a1e6e66331d625968579fac36d44323d31147c1f17"));
 		
-	vSeeds.push_back(CDNSSeedData("13.37.73.48","13.37.73.48"));
-	vSeeds.push_back(CDNSSeedData("96.8.118.120","96.8.118.120"));
-	vSeeds.push_back(CDNSSeedData("192.3.228.237","192.3.228.237"));
-	vSeeds.push_back(CDNSSeedData("107.174.52.177","107.174.52.177"));
+	vSeeds.push_back(CDNSSeedData("167.99.20.141","167.99.20.141"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 115);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 116);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 24);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 161);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
@@ -271,17 +268,17 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1612138687;
         genesis.nBits = bnProofOfWorkLimit.GetCompact(); //0x1f00ffff;
-        genesis.nNonce = 1050100;
+        genesis.nNonce = 1057837;
 
         uint256 hashTarget = uint256().SetCompact(genesis.nBits);
 
         assert(genesis.GetHash() <= hashTarget);
 
         hashGenesisBlock = genesis.GetHash();
-        printf("Merkle hash test: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        printf("Block hash test: %s\n", hashGenesisBlock.ToString().c_str());
-        assert(genesis.hashMerkleRoot == uint256("0xc5f622bad72a7eb7bf7e0699b8810e4a0371d742250d8332d3a4a444522a59ed"));
-        assert(hashGenesisBlock == uint256("0x0000b301b6a653548e0c15b32eff3b82784d8d668fb60b237bd3e5e50b50e49d"));
+        //printf("Merkle hash test: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        //printf("Block hash test: %s\n", hashGenesisBlock.ToString().c_str());
+        assert(genesis.hashMerkleRoot == uint256("0x2b13a6df3bf707d7ac52e1ee60dfaed678137a395e934b19d4a345728615d398"));
+        assert(hashGenesisBlock == uint256("0x0000066964e610e2cdce511340c13e745ff4a43e398192b3c03f179afd9ce394"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -350,8 +347,8 @@ public:
         hashGenesisBlock = genesis.GetHash();
         //printf("Merkle hash reg: %s\n", genesis.hashMerkleRoot.ToString().c_str());
         //printf("Block hash reg: %s\n", hashGenesisBlock.ToString().c_str());
-        assert(genesis.hashMerkleRoot == uint256("0xc5f622bad72a7eb7bf7e0699b8810e4a0371d742250d8332d3a4a444522a59ed"));
-        assert(hashGenesisBlock == uint256("0x7a677f426d36b57dda9b67b5b1b544a4380a78c4de12ab82b5f42bd5e0fe9157"));
+        assert(genesis.hashMerkleRoot == uint256("0x2b13a6df3bf707d7ac52e1ee60dfaed678137a395e934b19d4a345728615d398"));
+        assert(hashGenesisBlock == uint256("0x69dd8935ee07f434f42868f43c07de67f4238f18e21577785e5c3cb4af176550"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
