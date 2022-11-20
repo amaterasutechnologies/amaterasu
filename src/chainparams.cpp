@@ -111,10 +111,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xb6;
-        pchMessageStart[1] = 0xb3;
-        pchMessageStart[2] = 0xd4;
-        pchMessageStart[3] = 0xe5;
+        pchMessageStart[0] = 0x41;
+        pchMessageStart[1] = 0x4d;
+        pchMessageStart[2] = 0x41;
+        pchMessageStart[3] = 0x54;
         vAlertPubKey = ParseHex("025208d9c58b8edb90e7eed266d2aed4b5d1c81a6668083a296bf37798acbdc9ba");
         nDefaultPort = 5817;
         bnProofOfWorkLimit = ~uint256(0) >> 16;
@@ -174,7 +174,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0x2b13a6df3bf707d7ac52e1ee60dfaed678137a395e934b19d4a345728615d398"));
         assert(hashGenesisBlock == uint256("0x0000fdbd258564f5c8eef6a1e6e66331d625968579fac36d44323d31147c1f17"));
 		
-	vSeeds.push_back(CDNSSeedData("167.99.20.141","167.99.20.141"));
+	vSeeds.push_back(CDNSSeedData("45.77.240.134","45.77.240.134"));
 	vSeeds.push_back(CDNSSeedData("66.29.144.163","66.29.144.163"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
